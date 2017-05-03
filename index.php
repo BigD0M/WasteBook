@@ -1,3 +1,3 @@
 <?php include("include/header.php"); ?>
-<div>Testing again and again</div>
+<div>Testing</div>
 <?php include("include/footer.php"); ?>
