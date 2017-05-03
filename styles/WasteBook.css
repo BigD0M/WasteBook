@@ -36,17 +36,27 @@ footer {
     background-color: #7F3300;
 }
 
-.navbar-toggle {
+
+#myNavBar.navbar-inverse .navbar-toggle {
     background-color: #7F3300;
-    border-color: #7F3300;
+    border-color: #5F2600;
 }
 
-.navbar-toggle:hover {
+#myNavBar.navbar-inverse .navbar-toggle:hover,
+#myNavBar.navbar-inverse .navbar-toggle:focus {
     background-color: #5F2600;
+}
+
+#myNavBar.navbar-inverse .navbar-nav>li>a:hover {
+    color: white;
 }
 
 .navbar-collapse > ul > li:hover {
     background: #5F2600;
+}
+
+#navbarCollapse {
+    border: transparent;
 }
 
 
