@@ -2,13 +2,17 @@
 <html lang="en">
     <head>
         <title>WasteBook</title>
+        <!-- Bootstrap & styles -->
         <link rel="stylesheet" href="/styles/bootstrap.min.css" type="text/css"/>
         <link rel="stylesheet" href="/styles/WasteBook.css" type="text/css" />
         <meta charset="utf-8" />
         <script src="/script/jquery.min.js"></script>
         <script src="/script/bootstrap.min.js"></script>
+        <!-- Firebase -->
         <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
         <script src="/script/firebaseStart.js"></script>
+        <script src="https://cdn.firebase.com/libs/firebaseui/1.0.1/firebaseui.js"></script>
+        <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/1.0.1/firebaseui.css" />
         <script src="https://apis.google.com/js/platform.js" async defer></script>
         <script src="/script/signin.js"></script>
     </head>
@@ -16,22 +20,15 @@
         <p>WasteBook</p>
     </header>
     <body class="login">
-        
         <div class="container">
-            <div class="login-logo">
-                <img src="images/WasteBook_Login.png" alt="logo"/>
-            </div>
-        
-        
             <div class="login-options">
-                <input type="button" class="btn btn-danger" value="Sign in with Google" onclick="signIn();" />
-
-                <input type="button" class="btn btn-primary" value="Sign in with FaceBook" onclick="signIn();" />
+                <p>Sign In</p>
+                
+                <div class="inputs" id="firebaseui-auth-container"></div>
             </div>
-        
+            
         </div>
         
         
-
     </body>
 </html>
