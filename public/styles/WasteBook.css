@@ -1,16 +1,28 @@
 header {
-    background-color: #7F3300;
     height: auto;
     width: 100%;
     margin: auto;
 }
 
-header > img {
+.header > img {
+    display: inline;
     width: auto;
     height: auto;
 }
 
-header > p {
+.header > p{
+    display: inline;
+}
+
+.header {
+    background-color: #7F3300;
+}
+
+.login {
+    background: url("/images/loginBack.jpg");
+}
+
+header > p , .header > p{
     text-align: center;
     color: white;
     font-family: Tahoma;
@@ -20,48 +32,41 @@ header > p {
     width: auto;
 }
 
+
 html, body {
     height: 100%;
     margin: 0;
 }
 
-.login {
-    background-color: #7F3300;
-}
-
 .container {
-    position: fixed;
+    position: relative;
     top: 50%;
     left: 50%;
-    min-width: 100%;
-    width: auto;
-    /* bring your own prefixes */
+    width: 100%;
+    height: auto;
     transform: translate(-50%, -50%);
-    
 }
 
-.login-options > input {
-    margin-top: 50px;
-    width: 50%;
+.login-options > p {
+    font-family: Tahoma;
+    font-weight: 600;
+    font-size: 30px;
+    color: black;
 }
+
 
 .login-options {
-    width: 50%;
+    background-color: white;
+    display: block;
+    width: auto;
+    height: auto;
+    margin: auto;
+    text-align: center;
+    max-width: 350px;
+    max-height: 400px;
     padding-bottom: 25%;
-    height: 100%;
-    float: right;
-    text-align: center;
-}
-
-.login-logo {
-    width: 50%;
-    text-align: center;
-    float: left;
-}
-
-.login-logo > img {
-    display: inline-block;
-    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 3px 3px #543425;
 }
 
 .button {
