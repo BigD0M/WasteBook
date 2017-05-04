@@ -1,0 +1,101 @@
+header {
+    background-color: #7F3300;
+    height: auto;
+    width: 100%;
+    margin: auto;
+}
+
+header > img {
+    width: auto;
+    height: auto;
+}
+
+header > p {
+    text-align: center;
+    color: white;
+    font-family: Tahoma;
+    font-weight: 800;
+    font-size: 50px;
+    height: auto;
+    width: auto;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.login {
+    background-color: #7F3300;
+}
+
+.container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    width: auto;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+    
+}
+
+.login-options > input {
+    margin-top: 50px;
+    width: 50%;
+}
+
+.login-options {
+    width: 50%;
+    padding-bottom: 25%;
+    height: 100%;
+    float: right;
+    text-align: center;
+}
+
+.login-logo {
+    width: 50%;
+    text-align: center;
+    float: left;
+}
+
+.login-logo > img {
+    display: inline-block;
+    max-width: 100%;
+}
+
+.button {
+    text-align: center;
+    font-family: Tahoma;
+    color: Black;
+    font-weight: 800;
+    font-size: 30px;
+}
+
+
+#logout {
+    float: right;
+    color: white;
+    height: auto;
+    width: auto;
+}
+
+.add {
+    height: 100%;
+    margin: auto;
+
+}
+
+.add > img {
+    display: block;
+    margin: auto;
+    height: auto;
+    width: 100%;
+}
+
+.body {
+    height: 100%;
+}
+
+
+
