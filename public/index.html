@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>WasteBook</title>
+        <link rel="stylesheet" href="/styles/bootstrap.min.css" type="text/css"/>
+        <link rel="stylesheet" href="/styles/WasteBook.css" type="text/css" />
+        <meta charset="utf-8" />
+        <script src="/script/jquery.min.js"></script>
+        <script src="/script/bootstrap.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
+        <script src="/script/firebaseStart.js"></script>
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+        <script src="/script/signin.js"></script>
+    </head>
+    <header>
+        <p>WasteBook</p>
+    </header>
+    <body class="login">
+        
+        <div class="container">
+            <div class="login-logo">
+                <img src="images/WasteBook_Login.png" alt="logo"/>
+            </div>
+        
+        
+            <div class="login-options">
+                <input type="button" class="btn btn-danger" value="Sign in with Google" onclick="signIn();" />
+
+                <input type="button" class="btn btn-primary" value="Sign in with FaceBook" onclick="signIn();" />
+            </div>
+        
+        </div>
+        
+        
+
+    </body>
+</html>
