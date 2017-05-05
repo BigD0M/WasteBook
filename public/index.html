@@ -2,6 +2,7 @@
 <html lang="en">
     <head>
         <title>WasteBook</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- Bootstrap & styles -->
         <link rel="stylesheet" href="/styles/bootstrap.min.css" type="text/css"/>
         <link rel="stylesheet" href="/styles/WasteBook.css" type="text/css" />
@@ -16,19 +17,29 @@
         <script src="https://apis.google.com/js/platform.js" async defer></script>
         <script src="/script/signin.js"></script>
     </head>
-    <header>
-        <p>WasteBook</p>
-    </header>
-    <body class="login">
-        <div class="container">
-            <div class="login-options">
-                <p>Sign In</p>
-                
-                <div class="inputs" id="firebaseui-auth-container"></div>
+    <!-- NavBar -->
+    <div id="custom-bootstrap-menu" class="navbar navbar-default " role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header"><a class="navbar-brand" href="#">WasteBook</a>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-menubuilder"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                </button>
             </div>
-            
+            <div class="collapse navbar-collapse navbar-menubuilder">
+                <ul class="nav navbar-nav navbar-left">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/index.html">Login</a></li>
+                    <li><a href="/about-us">About Us</a></li>
+                    <li><a href="/contact">Contact Us</a></li>
+                </ul>
+            </div>
         </div>
-        
-        
+    </div>
+    <!-- Login form -->
+    <body class="login">
+        <div class="login-options">
+            <p>Sign into WasteBook</p>
+
+            <div class="input" id="firebaseui-auth-container"></div>
+        </div>
     </body>
 </html>
