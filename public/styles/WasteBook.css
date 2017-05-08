@@ -1,6 +1,25 @@
-body {
+html, body {
     width: auto;
-    background-color: #774a35;
+    height: 100%;
+    background-color: #DADADA;
+}
+
+header {
+    background-color: #A7A7A7;
+    min-height: 8%;
+}
+
+header > .dropdown {
+    display: inline;
+    float: right;
+}
+
+header > p {
+    font-family: Tahoma;
+    font-weight: 600;
+    font-size: 30px;
+    color: White;
+    display: inline;
 }
 
 .login-options > p {
@@ -18,7 +37,7 @@ body {
     width: auto;
     height: auto;
     text-align: center;
-    box-shadow: 3px 3px #543425;
+    box-shadow: 3px 3px #A7A7A7;
 }
 
 .button {
@@ -29,29 +48,38 @@ body {
     font-size: 30px;
 }
 
-
-#logout {
-    float: right;
-    color: white;
-    height: auto;
-    width: auto;
-}
-
-.add {
+.waste, .stats, .rank {
     height: 100%;
-    margin: auto;
-
 }
 
-.add > img {
+.container-fluid {
+    height: 92%;
+}
+
+.row {
+    height: 100%;
+}
+
+.add > img, .stats > img, .rank > img {
     display: block;
     margin: auto;
     height: auto;
     width: 100%;
 }
 
-.body {
-    height: 100%;
+.waste {
+    width: 33% auto;
+    background-color: #B4B4B4;
+}
+
+.stats {
+    width: 33% auto;
+    background-color: #C0C0C0;
+}
+
+.rank {
+    width: 34% auto;
+    background-color: #CDCDCD;
 }
 
 /* NavBar Styles */
@@ -61,27 +89,28 @@ body {
 
 #custom-bootstrap-menu.navbar-default {
     font-size: 14px;
-    background-color: rgba(139, 69, 19, 1);
+    background-color: #A7A7A7;
     border-width: 1px;
     border-radius: 4px;
+    margin: 0;
 }
 
 #custom-bootstrap-menu.navbar-default .navbar-nav>li>a {
     color: rgba(255, 255, 255, 1);
-    background-color: rgba(139, 69, 19, 1);
+    background-color: #A7A7A7;
 }
 
 #custom-bootstrap-menu.navbar-default .navbar-nav>li>a:hover,
 #custom-bootstrap-menu.navbar-default .navbar-nav>li>a:focus {
     color: rgba(255, 255, 255, 1);
-    background-color: rgba(102, 51, 11, 1);
+    background-color: #C0C0C0;
 }
 
 #custom-bootstrap-menu.navbar-default .navbar-nav>.active>a,
 #custom-bootstrap-menu.navbar-default .navbar-nav>.active>a:hover,
 #custom-bootstrap-menu.navbar-default .navbar-nav>.active>a:focus {
     color: rgba(255, 255, 255, 1);
-    background-color: rgba(139, 69, 19, 1);
+    background-color: #A7A7A7;
 }
 
 #custom-bootstrap-menu.navbar-default .navbar-toggle {
@@ -90,7 +119,7 @@ body {
 
 #custom-bootstrap-menu.navbar-default .navbar-toggle:hover,
 #custom-bootstrap-menu.navbar-default .navbar-toggle:focus {
-    background-color: #8b4513;
+    background-color: #A7A7A7;
 }
 
 #custom-bootstrap-menu.navbar-default .navbar-toggle .icon-bar {
