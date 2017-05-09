@@ -1,0 +1,35 @@
+[debug] ----------------------------------------------------------------------
+[debug] Command:      E:\nodejs\node.exe C:\Users\User\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] CLI Version:  3.7.0
+[debug] Platform:     win32
+[debug] Node Version: v6.10.3
+[debug] Time:         Tue May 09 2017 09:29:07 GMT-0700 (Pacific Daylight Time)
+[debug] ----------------------------------------------------------------------
+[debug] 
+[debug] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token { refresh_token: '1/VAFWRUulNQxumvGn3h98xuMUOAF5yL_P2JBSa9EQMI0',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Tue May 09 2017 09:29:07 GMT-0700 (Pacific Daylight Time)
+[debug] <<< HTTP RESPONSE 200
+[debug] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/wastebook-2e70b  
+ Tue May 09 2017 09:29:07 GMT-0700 (Pacific Daylight Time)
+[debug] <<< HTTP RESPONSE 200
+[debug] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/wastebook-2e70b/tokens  
+ Tue May 09 2017 09:29:08 GMT-0700 (Pacific Daylight Time)
+[debug] <<< HTTP RESPONSE 200
+[info] Starting Firebase development server...
+[info] 
+[info] Project Directory: C:\Users\User\Documents\GitHub\WasteBook
+[debug] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/wastebook-2e70b  
+ Tue May 09 2017 09:29:08 GMT-0700 (Pacific Daylight Time)
+[debug] <<< HTTP RESPONSE 200
+[debug] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/296254473379/clients/_:getWebAppConfig  
+ Tue May 09 2017 09:29:09 GMT-0700 (Pacific Daylight Time)
+[debug] <<< HTTP RESPONSE 200
+[info] Public Directory: public
+[info] 
+[info] Server listening at: http://localhost:5000
