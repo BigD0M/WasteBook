@@ -7,4 +7,8 @@ var config = {
     storageBucket: "wastebook-2e70b.appspot.com",
     messagingSenderId: "296254473379"
 };
+
 firebase.initializeApp(config);
+
+
+

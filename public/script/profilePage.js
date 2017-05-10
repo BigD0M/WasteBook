@@ -1,62 +1,108 @@
 /* Shrinks rank + stats */ 
 $(function () {
-     $(".waste").click(function () {
-     if ($(".waste").attr('id') == "normal") {
-         
-         $(".waste").animate({ width: '80%' }, 1500);
-         $(".stats").animate({ width: '10%' }, 750);
-         $(".rank").animate({ width: '10%' }, 750);
-         
-         $(".waste").attr('id', 'big');
-     }
-     else  {
-         $(".waste").animate({ width: '33%' }, 750);
-         $(".stats").animate({ width: '33%' }, 1500);
-         $(".rank").animate({ width: '34%' }, 1500);
-         $(".waste").attr('id', 'normal');
-     }
-     });
+    $(".waste").click(function () {
+        if ($(window).width() >= 768) {
+            if ($(".waste").attr('id') == "normal" || $(".waste").attr('id') == "small") {
+                
+                $(".waste").animate({ width: '80%' }, 1500);
+                $(".stats").animate({ width: '10%' }, 750);
+                $(".rank").animate({ width: '10%' }, 750);
+
+                $(".waste").attr('id', 'big');
+                $(".stats").attr('id', 'small');
+                $(".rank").attr('id', 'small');
+                
+                $(".waste-container").css("display", "block");
+                $(".stats-container").css("display", "none");
+                $(".rank-container").css("display", "none");
+            }
+        }
+    });
 });
+    
 
-
-/* Shrinks waste + rank */ 
 $(function () {
-     $(".stats").click(function () {
-     if ($(".stats").attr('id') == "normal") {
-         
-         $(".stats").animate({ width: '80%' }, 1500);
-         $(".waste").animate({ width: '10%' }, 750);
-         $(".rank").animate({ width: '10%' }, 750);
-         
-         $(".stats").attr('id', 'big');
-     }
-     else  {
-         $(".waste").animate({ width: '33%' }, 1500);
-         $(".stats").animate({ width: '33%' }, 750);
-         $(".rank").animate({ width: '34%' }, 1500);
-         $(".stats").attr('id', 'normal');
-     }
-     });
+    /* Shrinks waste + rank */ 
+    $(".stats").click(function () {
+        if ($(window).width() >= 768) {
+            if ($(".stats").attr('id') == "normal" || $(".stats").attr('id') == "small") {
+
+                $(".stats").animate({ width: '80%' }, 1500);
+                $(".waste").animate({ width: '10%' }, 750);
+                $(".rank").animate({ width: '10%' }, 750);
+
+                $(".waste").attr('id', 'small');
+                $(".stats").attr('id', 'big');
+                $(".rank").attr('id', 'small');
+                
+                $(".waste-container").css("display", "none");
+                $(".stats-container").css("display", "block");
+                $(".rank-container").css("display", "none");
+            }
+        }
+    });
 });
 
-
-/* Shrinks waste + stats */ 
 $(function () {
-     $(".rank").click(function () {
-     if ($(".rank").attr('id') == "normal") {
-         
-         $(".rank").animate({ width: '80%' }, 1500);
-         $(".waste").animate({ width: '10%' }, 750);
-         $(".stats").animate({ width: '10%' }, 750);
-         
-         $(".rank").attr('id', 'big');
-     }
-     else  {
-         $(".waste").animate({ width: '33%' }, 1500);
-         $(".rank").animate({ width: '33%' }, 750);
-         $(".stats").animate({ width: '34%' }, 1500);
-         
-         $(".rank").attr('id', 'normal');
-     }
-     });
+    /* Shrinks waste + stats */ 
+    $(".rank").click(function () {
+        if ($(window).width() >= 768) {
+            if ($(".rank").attr('id') == "normal" || $(".rank").attr('id') == "small") {
+
+                $(".rank").animate({ width: '80%' }, 1500);
+                $(".waste").animate({ width: '10%' }, 750);
+                $(".stats").animate({ width: '10%' }, 750);
+
+                $(".waste").attr('id', 'small');
+                $(".stats").attr('id', 'small');
+                $(".rank").attr('id', 'big');
+                
+                $(".waste-container").css("display", "none");
+                $(".stats-container").css("display", "none");
+                $(".rank-container").css("display", "block");
+            }
+        }
+    });
 });
+
+/* Re-sets page once resized to mobile scale */
+var tmp = $(window).width();
+$(window).resize(function() {
+
+    if ($(window).width() < 768 && tmp >= 768) {
+        $(".waste").css({
+            "width" : "100%",
+        });
+        
+        $(".stats").css({
+            "width" : "100%",
+        });
+        
+        $(".rank").css({
+            "width" : "100%"
+        });
+    } else {
+        $(".waste").css({
+            "width" : "33%",
+        });
+        
+        $(".stats").css({
+            "width" : "33%",
+        });
+        
+        $(".rank").css({
+            "width" : "34%"
+        });
+    }
+});
+
+
+function openWasteForm() {
+    if ($(window).width() >= 768) {
+        $(".waste-form").slideToggle(500);
+        
+    }
+}
+   
+
+

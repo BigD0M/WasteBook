@@ -4,12 +4,19 @@
         <title>WasteBook</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Bootstrap + CSS -->
         <script src="/script/jquery.min.js"></script>
         <script src="/script/bootstrap.min.js">
         </script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="/styles/WasteBook.css" type="text/css" />
         <script src="/script/profilePage.js"></script>
+        <!-- Firebase -->
+        <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
+        <script src="/script/firebaseStart.js"></script>
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+        <script src="/script/signout.js"></script>
+        <script src="/script/database.js"></script>
     </head>
     <body>
         <header>
@@ -22,7 +29,7 @@
                     </div>
                     <div class="collapse navbar-collapse navbar-menubuilder">
                         <ul class="nav navbar-nav navbar-left">
-                            <li><a href="/">Log out</a></li>
+                            <li><a class="signOut">Sign out</a></li>
                             <li><a href="/index.html">Change Password</a></li>
                             <li><a href="/about-us">Affiliated Apps</a></li>
                             <li><a href="/contact">Contact Us</a></li>
@@ -36,6 +43,30 @@
                 <div class="waste col-sm-4" id="normal">
                     <img />
                     <p class="button">Add Waste</p>
+                    <div class="waste-container" style="display: none">
+                        <button type="button" class="btn btn-primary waste-btn" onclick="openWasteForm()">Add Waste</button>
+                        <div class="waste-form">
+                            <input type="text" name="food" placeholder="food">
+                            <input type="text" name="qty" placeholder="quantity">
+                            <input type="text" name="price" placeholder="price">
+                            <input type="text" name="reason" placeholder="reason">
+                            <input type="text" name="brand" placeholder="brand">
+                            <input type="submit" class="btn btn-danger" onclick="addWaste()">
+                        </div>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Food</th>
+                                    <th>Quantity</th>
+                                    <th>Price</th>
+                                    <th>Reason</th>
+                                    <th>Brand</th>
+                                </tr>
+                            </thead>
+                            <tbody class="log">
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
                 <div class="stats col-sm-4" id="normal">
                     <img />
