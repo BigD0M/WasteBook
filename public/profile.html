@@ -5,10 +5,9 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- Bootstrap + CSS -->
+        <link rel="stylesheet" href="/styles/bootstrap.min.css" type="text/css"/>
         <script src="/script/jquery.min.js"></script>
-        <script src="/script/bootstrap.min.js">
-        </script>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="/script/bootstrap.min.js"></script>
         <link rel="stylesheet" href="/styles/WasteBook.css" type="text/css" />
         <script src="/script/profilePage.js"></script>
         <!-- Firebase -->
@@ -42,13 +41,33 @@
                     <p class="button">Add Waste</p>
                     <div class="waste-container" style="display: none">
                         <button type="button" class="btn btn-primary waste-btn" onclick="openWasteForm()">Add Waste</button>
-                        <div class="waste-form">
-                            <input type="text" name="food" placeholder="food">
-                            <input type="text" name="qty" placeholder="quantity">
-                            <input type="text" name="price" placeholder="price">
-                            <input type="text" name="reason" placeholder="reason">
-                            <input type="text" name="brand" placeholder="brand">
-                            <input type="submit" class="btn btn-danger" onclick="addWaste()">
+                        <div class="waste-form form-group">
+                            <div class="col-sm-2">
+                                <input class="form-control" type="text" name="food" placeholder="food">
+                            </div>
+                            <div class="col-sm-2">
+                                <input class="form-control" type="number" name="qty" placeholder="quantity">
+                            </div>
+                            <div class="col-sm-2">
+                                <input class="form-control" type="number" name="price" placeholder="price(optional)">
+                            </div>
+                            <div class="col-sm-2">
+                                <select class="form-control" type="text" name="reason">
+                                    <option value="" selected>Reason(optional)</option>
+                                    <option value="Expired">Expired</option>
+                                    <option value="Tasted Bad">Tasted Bad</option>
+                                    <option value="Got Stale">Got Stale</option>
+                                    <option value="Over Bought">Over Bought</option>
+                                    <option value="Over Cooked">Over Cooked</option>
+                                    <option value="Other">Other</option>
+                                  </select>
+                            </div>
+                            <div class="col-sm-2">
+                                <input class="form-control" type="text" name="brand" placeholder="brand(optional)">
+                            </div>
+                            <div class="col-sm-2">
+                                <input type="submit" class="btn btn-danger" onclick="addWaste()">
+                            </div>
                         </div>
                         <table class="table table-striped">
                             <thead>
