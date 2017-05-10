@@ -36,7 +36,6 @@ function checkForUser() {
     });
 }
 
-
 //adds user waste from add waste form 
 function addWaste() {
     
@@ -44,7 +43,7 @@ function addWaste() {
     //data for DB
     var food =  $('input[name=food]').val();
     var qty =  $('input[name=qty]').val();
-    var reason =  $('input[name=reason]').val();
+    var reason =  $('select[name=reason]').val();
     var brand =  $('input[name=brand]').val();
     var price =  $('input[name=price]').val();
     
@@ -54,7 +53,6 @@ function addWaste() {
         //clears input fields
         $('input[name=food]').val("");
         $('input[name=qty]').val("");
-        $('input[name=reason]').val("");
         $('input[name=brand]').val("");
         $('input[name=price]').val("");
 
