@@ -45,7 +45,7 @@ header > p {
     font-family: Tahoma;
     color: Black;
     font-weight: 800;
-    font-size: 30px;
+    font-size: 12px;
 }
 
 .waste, .stats, .rank {
@@ -100,7 +100,7 @@ header > p {
 
 .waste-btn {
     width: 95%;
-    margin: 10px 0;
+    margin: 2.5%;
 }
 
 /* NavBar Styles */
