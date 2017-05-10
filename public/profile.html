@@ -18,30 +18,27 @@
         <script src="/script/signout.js"></script>
         <script src="/script/database.js"></script>
     </head>
-    <body>
-        <header>
-            <!-- NavBar -->
-            <div id="custom-bootstrap-menu" class="navbar navbar-default " role="navigation">
-                <div class="">
-                    <div class="navbar-header"><a class="navbar-brand" href="#">WasteBook</a>
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-menubuilder"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-                        </button>
-                    </div>
-                    <div class="collapse navbar-collapse navbar-menubuilder">
-                        <ul class="nav navbar-nav navbar-left">
-                            <li><a class="signOut">Sign out</a></li>
-                            <li><a href="/index.html">Change Password</a></li>
-                            <li><a href="/about-us">Affiliated Apps</a></li>
-                            <li><a href="/contact">Contact Us</a></li>
-                        </ul>
-                    </div>
-                </div>
+    <!-- NavBar -->
+    <div id="custom-bootstrap-menu" class="navbar navbar-default " role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header"><a class="navbar-brand" href="#">WasteBook</a>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-menubuilder"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                </button>
             </div>
-        </header>
+            <div class="collapse navbar-collapse navbar-menubuilder">
+                <ul class="nav navbar-nav navbar-left">
+                    <li><a class="signOut">Sign out</a></li>
+                    <li><a href="/index.html">Change Password</a></li>
+                    <li><a href="/about-us">Affiliated Apps</a></li>
+                    <li><a href="/contact">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <body>
         <div class="container-fluid options">
             <div class="row"> 
                 <div class="waste col-sm-4" id="normal">
-                    <img />
                     <p class="button">Add Waste</p>
                     <div class="waste-container" style="display: none">
                         <button type="button" class="btn btn-primary waste-btn" onclick="openWasteForm()">Add Waste</button>
@@ -69,11 +66,9 @@
                     </div>
                 </div>
                 <div class="stats col-sm-4" id="normal">
-                    <img />
                     <p class="button">View Statistics</p>
                 </div>
                 <div class="rank col-sm-4" id="normal">
-                    <img />
                     <p class="button">View Rank</p>
                 </div>
             </div>

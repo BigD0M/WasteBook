@@ -2,33 +2,42 @@ var database = firebase.database();
 
 var currUser;
 
-var path;
-
+//assigns current user and updates it's database
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
         currUser = user;
         
-        writeUserData(user.uid, user.displayName, user.email);
-    
-        //Writes the user data to the firebase database
-        function writeUserData(userId, name, email) {
-          firebase.database().ref('users/' + userId).push({
-            username: name,
-            email: email
-          });
-        }
+        checkForUser();
         
-         path = 'users/' + currUser.uid + '/waste/';
-    
-        updateLog(path);
+        updateLog('users/' + currUser.uid + '/waste/');
         
     } else {
          location.replace("index.html"); //re-directs user if not logged in
     }
 });
 
+//Writes the user data to the firebase database
+function writeUserData(userId, name, email) {
+    firebase.database().ref('users/' + userId).set({
+        username: name,
+        email: email
+    });
+}
+
+//checks if the current user exists, if not one is created
+function checkForUser() {
+    var ref = firebase.database().ref('users/');
+    
+    ref.equalTo(currUser.uid).once("value", function(snapshot) {
+        var userData = snapshot.val();
+        if (userData != null){
+            writeUserData(currUser.uid, currUser.displayName, currUser.email);
+        }
+    });
+}
 
 
+//adds user waste from add waste form 
 function addWaste() {
     
    
@@ -51,7 +60,7 @@ function addWaste() {
 
 
         //Adds data to DB
-        firebase.database().ref(path).push({
+        firebase.database().ref('users/' + currUser.uid + '/waste/').push({
             food: food,
             qty: qty,
             reason: reason,
@@ -61,11 +70,11 @@ function addWaste() {
     }
 
     
-    updateLog(path);
+    updateLog('users/' + currUser.uid + '/waste/');
 }
 
 
-
+//updates the user's log
 function updateLog(path) {
     
     var ref = firebase.database().ref(path);
