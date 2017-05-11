@@ -5,8 +5,8 @@ $(function () {
             if ($(".waste").attr('id') == "normal" || $(".waste").attr('id') == "small") {
                 
                 $(".waste").animate({ width: '80%' }, 1500);
-                $(".stats").animate({ width: '10%' }, 750);
-                $(".rank").animate({ width: '10%' }, 750);
+                $(".stats").animate({ width: '10%' }, 1500);
+                $(".rank").animate({ width: '10%' }, 1500);
 
 
             }
@@ -14,8 +14,8 @@ $(function () {
             if ($(".waste").attr('id') == "normal" || $(".waste").attr('id') == "small") {
                 
                 $(".waste").animate({ height: '80%' }, 1500);
-                $(".stats").animate({ height: '10%' }, 750);
-                $(".rank").animate({ height: '10%' }, 750);
+                $(".stats").animate({ height: '10%' }, 1500);
+                $(".rank").animate({ height: '10%' }, 1500);
 
 
             }
@@ -42,15 +42,15 @@ $(function () {
             if ($(".stats").attr('id') == "normal" || $(".stats").attr('id') == "small") {
 
                 $(".stats").animate({ width: '80%' }, 1500);
-                $(".waste").animate({ width: '10%' }, 750);
-                $(".rank").animate({ width: '10%' }, 750);
+                $(".waste").animate({ width: '10%' }, 1500);
+                $(".rank").animate({ width: '10%' }, 1500);
             }
         } else {
             if ($(".stats").attr('id') == "normal" || $(".stats").attr('id') == "small") {
 
                 $(".stats").animate({ height: '80%' }, 1500);
-                $(".waste").animate({ height: '10%' }, 750);
-                $(".rank").animate({ height: '10%' }, 750);
+                $(".waste").animate({ height: '10%' }, 1500);
+                $(".rank").animate({ height: '10%' }, 1500);
             }
         }
         
@@ -65,6 +65,7 @@ $(function () {
         $(".waste-cover").css("display", "block");
         $(".stats-cover").css("display", "none");
         $(".rank-cover").css("display", "block");
+        
     });
 });
 
@@ -75,16 +76,16 @@ $(function () {
             if ($(".rank").attr('id') == "normal" || $(".rank").attr('id') == "small") {
 
                 $(".rank").animate({ width: '80%' }, 1500);
-                $(".waste").animate({ width: '10%' }, 750);
-                $(".stats").animate({ width: '10%' }, 750);
+                $(".waste").animate({ width: '10%' }, 1500);
+                $(".stats").animate({ width: '10%' }, 1500);
 
             }
         } else {
             if ($(".rank").attr('id') == "normal" || $(".rank").attr('id') == "small") {
 
                 $(".rank").animate({ height: '80%' }, 1500);
-                $(".waste").animate({ height: '10%' }, 750);
-                $(".stats").animate({ height: '10%' }, 750);
+                $(".waste").animate({ height: '10%' }, 1500);
+                $(".stats").animate({ height: '10%' }, 1500);
 
             }
             
@@ -105,7 +106,28 @@ $(function () {
     });
 });
 
+/* Changes background color and saves cookie */
+$(function () {
+    
+    if ($.cookie('background-color')) {
+        $('.waste').addClass($.cookie('background-color'));
+        $('.stats').addClass($.cookie('background-color'));
+        $('.rank').addClass($.cookie('background-color'));
+    }
+    
+    $(".background-btn").on('click', function () /*change(function()*/{
+        $('.waste').removeClass($.cookie('previous-color')).addClass($(this).val());
+        $('.stats').removeClass($.cookie('previous-color')).addClass($(this).val());
+        $('.rank').removeClass($.cookie('previous-color')).addClass($(this).val());
+    
+        $.removeCookie('background-color');
+        $.cookie('background-color', $(this).val(), {expires: 1, path: '/'});
 
+        $.removeCookie('previous-color');
+        $.cookie('previous-color', $.cookie('background-color'), {expires: 1, path: '/'});
+        
+    });
+});
 
 var tmp = 768;
 

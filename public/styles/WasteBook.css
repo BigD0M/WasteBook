@@ -1,26 +1,7 @@
 html, body {
-    overflow: hidden;
     width: auto;
     height: 100%;
     background-color: white;
-}
-
-.login-options > p {
-    font-family: Tahoma;
-    font-weight: 600;
-    font-size: 30px;
-    color: black;
-}
-
-.login-options {
-    margin: auto;
-    margin-top: 150px;
-    background-color: white;
-    max-width: 400px;
-    width: auto;
-    height: auto;
-    text-align: center;
-    box-shadow: 3px 3px #A7A7A7;
 }
 
 /* NavBar Styles */
