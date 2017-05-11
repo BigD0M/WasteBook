@@ -18,17 +18,20 @@
 
 .waste {
     width: 33% auto;
-    background-color: lightgreen;
+    background-color: #ff941a;
+    border: 1px solid white;
 }
 
 .stats {
     width: 33% auto;
-    background-color: lightblue;
+    background-color: #ff941a;
+    border: 1px solid white;
 }
 
 .rank {
     width: 34% auto;
-    background-color: lightcoral;
+    background-color: #ff941a;
+    border: 1px solid white;
 }
 
 .waste-form {
@@ -41,7 +44,7 @@
 .waste-container {
     margin: 1%;
     background-color: white;
-    box-shadow: 2px 2px #A7A7A7;
+    box-shadow: 2px 2px #e67a00;
 }
 
 .waste-btn {
