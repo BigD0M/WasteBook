@@ -1,0 +1,175 @@
+body {
+    font-family: 'Helvetica', 'Arial', sans-serif;                          /* A basic font so that the design can adapt nicely*/
+}
+
+/* For sections with background images */
+
+.imageBlock {
+    background-origin: content;                                             /* Places the background image in the upper left corner of the content */
+    background-repeat: no-repeat;                                           /* Keeps the background image from repeating when the window is slimmed */
+    background-size: 100%;                                                  /* Sets the width and height of the background image to the same as the div */
+    color: white;                                                           /* Color of the font in the div */
+    height: 75vw;   
+    max-height: 600px;
+    line-height: 75vw;                                                     /* Pushes the div to just under the header */
+    margin-top: -20px; 
+    text-align: center;                                                     /* Horizontally centres the text */
+    width: 100%;                                                            /* Keeps the div from the left all the way to the right of the window */
+}
+
+#Hook {
+    background-image: url(../images/pile-of-wasted-food-1-darkened.jpg);    /* Used a darkened image instead of using layers + opacity for simplicity */
+}
+
+#LeadUp {
+    background-image: url(../images/person-throwing-away-food-darkened.jpg);/* Used a darkened image instead of using layers + opacity for simplicity */
+}
+
+.imageBlockHeading {
+    font-size: 5vw;
+}
+
+.imageBlockSubHeading {
+    font-size: 4vw;
+    font-weight: 100;                                                       /* Made it lighter to make it more of its own thing */
+}
+
+.imageBlockCaption {
+    font-size: 3vw;
+    font-weight: 100;                                                       /* Made it the same as subheading to keep it separate from the heading */
+}
+
+.textBlock {
+    background-color: #fffdd0;                                              /* Colour of the div for the text sections */
+    color: black;                                                           /* Colour of the font for the text sections */
+	height: auto;                                                           /* Height of the div for the text sections */
+    line-height: auto;                                                      /* Vertically centers the text by matching the div height */
+    padding: 75px 0;                                                        /* Inserts space on top and under the div */
+    text-align: center;                                                     /* Horizontally centres the text */
+    width: 100%;                                                            /* Keeps the div from the left all the way to the right of the window */
+}
+
+/* For sections focussed on text */
+
+.textBlockHeading {
+    font-size: 32px;                                                        /* Size of heading font */
+}
+
+#Problem li, .textBlockText {
+    font-size: 18px;                                                        /* Size of main text font */
+    text-align: left;                                                       /* Lines the text along the left side to resemble more of a paragraph */
+}
+
+.textBlockText {
+    margin: 10px 5% 0;                                                      /* Inserts space above paragraphs, none below, and 5% of the widht on each side */
+}
+
+#Problem li {
+    margin: 0 5% 0;   
+}
+
+.graphicsBlock {
+    background-color: #39bab1;                                              /* Colour of the div for the text sections */
+    color: white;                                                           /* Colour of the font for the text sections */
+	height: auto;                                                           /* Height of the div for the text sections */
+    line-height: auto;                                                      /* Vertically centers the text by matching the div height */
+    padding: 75px 0;                                                        /* Inserts space on top and under the div */
+    text-align: center;                                                     /* Horizontally centres the text */
+    width: 100%;                                                            /* Keeps the div from the left all the way to the right of the window */
+}
+
+.statGraphic {
+    margin: 10px 25px 0;
+    width: 200px;
+} 
+
+#signUpButton {
+    border: 5px solid white;
+    margin: 0 200px;
+    cursor: pointer;                                                        /* So users know that it's clickable */
+    font-size: 1.5em;
+}
+
+#signUpButton:hover {
+    background-color: white;
+    color: #ff8800;
+}
+
+#Hook span, #LeadUp span {
+    display: inline-block;
+    line-height: normal;
+    vertical-align: middle;
+}
+
+
+/*  MODAL BOX  */
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+
+.modal-body {padding: 2px 16px;}
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}

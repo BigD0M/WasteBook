@@ -10,6 +10,7 @@
         <script src="/script/jquery.cookie.js"></script>
         <script src="/script/bootstrap.min.js"></script>
         <link rel="stylesheet" href="/styles/WasteBook.css" type="text/css" />
+        <link rel="stylesheet" href="/styles/profile.css" type="text/css" />
         <script src="/script/profilePage.js"></script>
         <!-- Firebase -->
         <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
@@ -53,7 +54,10 @@
         <div class="container-fluid options">
             <div class="row"> 
                 <div class="waste col-sm-4" id="normal">
-                    <p class="button">Add Waste</p>
+                    <div class="waste-cover">
+                        <p>Add Waste</p>
+                        <img src="images/trash.png" alt="trash"/>
+                    </div>
                     <div class="waste-container" style="display: none">
                         <button type="button" class="btn btn-primary waste-btn" onclick="openWasteForm()">Add Waste</button>
                         <div class="waste-form form-group">
@@ -100,10 +104,16 @@
                     </div>
                 </div>
                 <div class="stats col-sm-4" id="normal">
-                    <p class="button">View Statistics</p>
+                <div class="stats-cover">
+                    <p>View Stats</p>
+                    <img src="images/stats.png" alt="stats"/>
+                </div>
                 </div>
                 <div class="rank col-sm-4" id="normal">
-                    <p class="button">View Rank</p>
+                    <div class="rank-cover">
+                        <p>View Rank</p>
+                        <img src="images/crown.png" alt="crown"/>
+                    </div>
                 </div>
             </div>
         </div>

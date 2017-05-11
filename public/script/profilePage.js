@@ -28,6 +28,10 @@ $(function () {
         $(".waste-container").css("display", "block");
         $(".stats-container").css("display", "none");
         $(".rank-container").css("display", "none");
+        
+        $(".waste-cover").css("display", "none");
+        $(".stats-cover").css("display", "block");
+        $(".rank-cover").css("display", "block");
     });
 });
     
@@ -57,6 +61,10 @@ $(function () {
         $(".waste-container").css("display", "none");
         $(".stats-container").css("display", "block");
         $(".rank-container").css("display", "none");
+        
+        $(".waste-cover").css("display", "block");
+        $(".stats-cover").css("display", "none");
+        $(".rank-cover").css("display", "block");
     });
 });
 
@@ -90,6 +98,10 @@ $(function () {
         $(".waste-container").css("display", "none");
         $(".stats-container").css("display", "none");
         $(".rank-container").css("display", "block");
+        
+        $(".waste-cover").css("display", "block");
+        $(".stats-cover").css("display", "block");
+        $(".rank-cover").css("display", "none");
     });
 });
 
@@ -145,6 +157,10 @@ $(window).on("load resize", function () {
         $(".waste-container").css("display", "none");
         $(".stats-container").css("display", "none");
         $(".rank-container").css("display", "none");
+        
+        $(".waste-cover").css("display", "block");
+        $(".stats-cover").css("display", "block");
+        $(".rank-cover").css("display", "block");
     } else if ($(window).width() >= 768 && tmp < 768) {
         $(".waste").css({
             "width" : "33%",
@@ -169,6 +185,10 @@ $(window).on("load resize", function () {
         $(".waste-container").css("display", "none");
         $(".stats-container").css("display", "none");
         $(".rank-container").css("display", "none");
+
+        $(".waste-cover").css("display", "block");
+        $(".stats-cover").css("display", "block");
+        $(".rank-cover").css("display", "block");
     }
     
     tmp = $(window).width();

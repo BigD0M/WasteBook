@@ -198,19 +198,19 @@ div#container {
 
 /* NavBar Styles */
 #custom-bootstrap-menu.navbar-default .navbar-brand {
-    color: rgba(255, 255, 255, 1);
+    color: black;
 }
 
 #custom-bootstrap-menu.navbar-default {
     font-size: 14px;
-    background-color: #A7A7A7;
+    background-color: white;
     border-radius: 0px;
     margin: 0;
 }
 
 #custom-bootstrap-menu.navbar-default .navbar-nav>li>a {
-    color: rgba(255, 255, 255, 1);
-    background-color: #A7A7A7;
+    color: black;
+    background-color: white;
 }
 
 #custom-bootstrap-menu.navbar-default .navbar-nav>li>a:hover,
@@ -227,16 +227,16 @@ div#container {
 }
 
 #custom-bootstrap-menu.navbar-default .navbar-toggle {
-    border-color: white;
+    border-color: black;
 }
 
 #custom-bootstrap-menu.navbar-default .navbar-toggle:hover,
 #custom-bootstrap-menu.navbar-default .navbar-toggle:focus {
-    background-color: #A7A7A7;
+    background-color: black;
 }
 
 #custom-bootstrap-menu.navbar-default .navbar-toggle .icon-bar {
-    background-color: white;
+    background-color: black;
 }
 
 #custom-bootstrap-menu.navbar-default .navbar-toggle:hover .icon-bar,
