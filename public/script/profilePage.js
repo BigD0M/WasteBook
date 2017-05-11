@@ -93,7 +93,28 @@ $(function () {
     });
 });
 
+/* Changes background color and saves cookie */
+$(function () {
+    
+    if ($.cookie('background-color')) {
+        $('.waste').addClass($.cookie('background-color'));
+        $('.stats').addClass($.cookie('background-color'));
+        $('.rank').addClass($.cookie('background-color'));
+    }
+    
+    $(".background-btn").on('click', function () /*change(function()*/{
+        $('.waste').removeClass($.cookie('previous-color')).addClass($(this).val());
+        $('.stats').removeClass($.cookie('previous-color')).addClass($(this).val());
+        $('.rank').removeClass($.cookie('previous-color')).addClass($(this).val());
+    
+        $.removeCookie('background-color');
+        $.cookie('background-color', $(this).val(), {expires: 1, path: '/'});
 
+        $.removeCookie('previous-color');
+        $.cookie('previous-color', $.cookie('background-color'), {expires: 1, path: '/'});
+        
+    });
+});
 
 var tmp = 768;
 

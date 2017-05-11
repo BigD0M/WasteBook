@@ -2,7 +2,7 @@ html, body {
     overflow: hidden;
     width: auto;
     height: 100%;
-    background-color: #DADADA;
+    background-color: #CDCDCD;
 }
 
 .login-options > p {
@@ -41,11 +41,43 @@ html, body {
     height: 100%;
 }
 
+.options {
+    padding-left: 10px;
+    color: white;
+}
+
+.select {
+    color: black;
+}
+
 .add > img, .stats > img, .rank > img {
     display: block;
     margin: auto;
     height: auto;
     width: 100%;
+}
+
+.background-btn {
+    margin-left: 8px; 
+    height: 20px;
+    width: 20px;
+}
+
+.black-background {
+    background-color: #000000;
+}
+
+.blue-background {
+    background-color: #327bc9;
+}
+
+div#container {
+    height: 50px; 
+    line-height: 50px;
+}
+
+.cog {
+    vertical-align: middle;
 }
 
 .waste {
@@ -62,6 +94,86 @@ html, body {
 .rank {
     width: 34% auto;
     background-color: #CDCDCD;
+}
+
+.waste.grey {
+    overflow: auto;
+    width: 33% auto;
+    background-color: #B4B4B4;
+}
+
+.stats.grey {
+    width: 33% auto;
+    background-color: #C0C0C0;
+}
+
+.rank.grey {
+    width: 34% auto;
+    background-color: #CDCDCD;
+}
+
+.waste.green {
+    overflow: auto;
+    width: 33% auto;
+    background-color: #54BF3D;
+}
+
+.stats.green {
+    width: 33% auto;
+    background-color: #4BCC2E;
+}
+
+.rank.green {
+    width: 34% auto;
+    background-color: #57DD39;
+}
+
+.waste.black {
+    overflow: auto;
+    width: 33% auto;
+    background-color: #1c1c1c;
+}
+
+.stats.black {
+    width: 33% auto;
+    background-color: #2b2b2b;
+}
+
+.rank.black {
+    width: 34% auto;
+    background-color: #3d3d3d;
+}
+
+.waste.blue {
+    overflow: auto;
+    width: 33% auto;
+    background-color: #215791;
+}
+
+.stats.blue {
+    width: 33% auto;
+    background-color: #2b6baf;
+}
+
+.rank.blue {
+    width: 34% auto;
+    background-color: #327bc9;
+}
+
+.waste.yellow {
+    overflow: auto;
+    width: 33% auto;
+    background-color: #e28b18;
+}
+
+.stats.yellow {
+    width: 33% auto;
+    background-color: #ffa126;
+}
+
+.rank.yellow {
+    width: 34% auto;
+    background-color: #f7b633;
 }
 
 .waste-form {
