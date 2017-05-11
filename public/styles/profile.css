@@ -18,17 +18,20 @@
 
 .waste {
     width: 33% auto;
-    background-color: lightgreen;
+    background-color: #ff941a;
+    border: 1px solid white;
 }
 
 .stats {
     width: 33% auto;
-    background-color: lightblue;
+    background-color: #ff941a;
+    border: 1px solid white;
 }
 
 .rank {
     width: 34% auto;
-    background-color: lightcoral;
+    background-color: #ff941a;
+    border: 1px solid white;
 }
 
 .waste-form {
@@ -41,12 +44,106 @@
 .waste-container {
     margin: 1%;
     background-color: white;
-    box-shadow: 2px 2px #A7A7A7;
+    box-shadow: 2px 2px RGBA(0, 0, 0, 0.1);
 }
 
 .waste-btn {
     width: 95%;
     margin: 2.5%;
+}
+
+.background-btn {
+    margin-left: 8px; 
+    height: 20px;
+    width: 20px;
+}
+
+.black-background {
+    background-color: #000000;
+}
+
+.blue-background {
+    background-color: #327bc9;
+}
+
+.waste.grey {
+    overflow: auto;
+    width: 33% auto;
+    background-color: #B4B4B4;
+}
+
+.stats.grey {
+    width: 33% auto;
+    background-color: #B4B4B4;
+}
+
+.rank.grey {
+    width: 34% auto;
+    background-color: #B4B4B4;
+}
+
+.waste.green {
+    overflow: auto;
+    width: 33% auto;
+    background-color: #54BF3D;
+}
+
+.stats.green {
+    width: 33% auto;
+    background-color: #54BF3D;
+}
+
+.rank.green {
+    width: 34% auto;
+    background-color: #54BF3D;
+}
+
+.waste.black {
+    overflow: auto;
+    width: 33% auto;
+    background-color: #1c1c1c;
+}
+
+.stats.black {
+    width: 33% auto;
+    background-color: #1c1c1c;
+}
+
+.rank.black {
+    width: 34% auto;
+    background-color: #1c1c1c;
+}
+
+.waste.blue {
+    overflow: auto;
+    width: 33% auto;
+    background-color: #215791;
+}
+
+.stats.blue {
+    width: 33% auto;
+    background-color: #215791;
+}
+
+.rank.blue {
+    width: 34% auto;
+    background-color: #215791;
+}
+
+.waste.yellow {
+    overflow: auto;
+    width: 33% auto;
+    background-color: #ff941a;
+}
+
+.stats.yellow {
+    width: 33% auto;
+    background-color: #ff941a;
+}
+
+.rank.yellow {
+    width: 34% auto;
+    background-color: #ff941a;
 }
 
 .waste-cover, .stats-cover, .rank-cover {

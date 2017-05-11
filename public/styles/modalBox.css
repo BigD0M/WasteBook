@@ -52,7 +52,8 @@
 }
             
 .modal-header {
-    background-color: #7f3000;
+    background-color: white;
+    border-color: transparent;
     color: white;
 }
 
