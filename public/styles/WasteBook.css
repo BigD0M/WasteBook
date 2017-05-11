@@ -2,7 +2,7 @@ html, body {
     overflow: hidden;
     width: auto;
     height: 100%;
-    background-color: #DADADA;
+    background-color: white;
 }
 
 .login-options > p {
@@ -23,82 +23,21 @@ html, body {
     box-shadow: 3px 3px #A7A7A7;
 }
 
-.button {
-    text-align: center;
-    color: white;
-    font-size: 18px;
-}
-
-.waste, .stats, .rank {
-    height: 100%;
-}
-
-.container-fluid {
-    height: 91%;
-}
-
-.row {
-    height: 100%;
-}
-
-.add > img, .stats > img, .rank > img {
-    display: block;
-    margin: auto;
-    height: auto;
-    width: 100%;
-}
-
-.waste {
-    overflow: auto;
-    width: 33% auto;
-    background-color: #B4B4B4;
-}
-
-.stats {
-    width: 33% auto;
-    background-color: #C0C0C0;
-}
-
-.rank {
-    width: 34% auto;
-    background-color: #CDCDCD;
-}
-
-.waste-form {
-    display: none;
-    height: 0%;
-    width: auto;
-}
-
-.waste-container {
-    background-color: white;
-    box-shadow: 2px 2px #A7A7A7;
-}
-
-.waste-form {
-    text-align: center;
-}
-
-.waste-btn {
-    width: 95%;
-    margin: 2.5%;
-}
-
 /* NavBar Styles */
 #custom-bootstrap-menu.navbar-default .navbar-brand {
-    color: rgba(255, 255, 255, 1);
+    color: black;
 }
 
 #custom-bootstrap-menu.navbar-default {
     font-size: 14px;
-    background-color: #A7A7A7;
+    background-color: white;
     border-radius: 0px;
     margin: 0;
 }
 
 #custom-bootstrap-menu.navbar-default .navbar-nav>li>a {
-    color: rgba(255, 255, 255, 1);
-    background-color: #A7A7A7;
+    color: black;
+    background-color: white;
 }
 
 #custom-bootstrap-menu.navbar-default .navbar-nav>li>a:hover,
@@ -115,16 +54,16 @@ html, body {
 }
 
 #custom-bootstrap-menu.navbar-default .navbar-toggle {
-    border-color: white;
+    border-color: black;
 }
 
 #custom-bootstrap-menu.navbar-default .navbar-toggle:hover,
 #custom-bootstrap-menu.navbar-default .navbar-toggle:focus {
-    background-color: #A7A7A7;
+    background-color: black;
 }
 
 #custom-bootstrap-menu.navbar-default .navbar-toggle .icon-bar {
-    background-color: white;
+    background-color: black;
 }
 
 #custom-bootstrap-menu.navbar-default .navbar-toggle:hover .icon-bar,
