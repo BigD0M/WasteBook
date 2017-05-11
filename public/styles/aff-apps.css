@@ -1,0 +1,11 @@
+.aff-apps {
+    display: block;
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    margin-top: 10%;
+}
+
+#title {
+    text-align: center;
+}

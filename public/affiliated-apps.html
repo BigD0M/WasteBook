@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>WasteBook</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Bootstrap + CSS -->
+        <script src="script/jquery.min.js"></script>
+        <script src="script/bootstrap.min.js">
+        </script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="styles/WasteBook.css" type="text/css" />
+        <link rel="stylesheet" href="styles/aff-apps.css" type="text/css" />
+        <script src="script/profilePage.js"></script>
+        <!-- Firebase -->
+        <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
+        <script src="script/firebaseStart.js"></script>
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+        <script src="script/signout.js"></script>
+        <script src="script/database.js"></script>
+    </head>
+    <body>
+        <header>
+            <!-- NavBar -->
+            <div id="custom-bootstrap-menu" class="navbar navbar-default " role="navigation">
+                <div class="">
+                    <div class="navbar-header"><a class="navbar-brand" href="#">WasteBook</a>
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-menubuilder"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div class="collapse navbar-collapse navbar-menubuilder">
+                        <ul class="nav navbar-nav navbar-left">
+                            <li><a class="signOut">Sign out</a></li>
+                            <li><a href="index.html">Change Password</a></li>
+                            <li><a href="affiliated-apps.html">Affiliated Apps</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <h1 id="title">Affiliated Apps</h1>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <a href="https://refrigedate.me"><img src="images/RefrigedateLogo.png" class="aff-apps"/></a>
+                </div>
+                <div class="col-sm-5">
+                    <h3>Refrigedate</h3>
+                    <hr>
+                    <p class="apps-desc">If you are constantly forgetting food you put in your fridge and throwing it away when it gets old, you can use Refrigedate to help you waste less food. Refrigedate can be used to keep track of how old the food in the fridge is and who it belongs to. Use this web app to reduce your food waste.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <a href="https://overcooked.ca"><img src="images/overcooked.png" class="aff-apps"/></a>
+                </div>
+                <div class="col-sm-5">
+                    <h3>Overcooked</h3>
+                    <hr>
+                    <p class="apps-desc">This web app allows users to share their extra food with other people in the area or charities. If you find yourself having lots of extra food but are unable to eat it all, you can use this web app to reduce your food waste while also helping other people in need.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <img src="images/RefrigedateLogo.png" class="aff-apps"/>
+                </div>
+                <div class="col-sm-5">
+                    <h3>Scavange</h3>
+                    <hr>
+                    <p class="apps-desc">Do you have a lot of leftovers that you don't have a use for, and are thinking of throwing them away? Then you should use Scavange. This web app allows users to input food items and gets a recipe that uses those food items so that they are not wasted.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <a href="http://preservit.ca"><img src="images/RefrigedateLogo.png" class="aff-apps"/></a>
+                </div>
+                <div class="col-sm-5">
+                    <h3>PreservIT</h3>
+                    <hr>
+                    <p class="apps-desc">Not know how to preserve foods and extend their shelf life? Use PreservIT to find out. This web app contains information on how to preserve a variety of foods. Less spoiled food items means that you don't have to throw away as much food and you also have more time to use them.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <img src="images/RefrigedateLogo.png" class="aff-apps"/>
+                </div>
+                <div class="col-sm-5">
+                    <h3>iPicky</h3>
+                    <hr>
+                    <p class="apps-desc">Buying food for other people that they don't like are allergic too? Use iPicky to create a list of your likes, dislikes and allergies. Combine lists with other people to create a master list that can be used by the person grocery shopping and cooking.</p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
