@@ -5,8 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- Bootstrap & styles -->
         <link rel="stylesheet" href="/styles/bootstrap.min.css" type="text/css"/>
-        <link rel="stylesheet" href="/styles/WasteBook.css" type="text/css" />
         <link rel="icon" href="/images/notepad.png"> <!-- web icon -->
+        <link rel="stylesheet" type="text/css" href="/styles/contact_style.css"> <!-- style sheet -->
         <meta charset="utf-8" />
         <script src="/script/jquery.min.js"></script>
         <script src="/script/bootstrap.min.js"></script>
@@ -27,19 +27,83 @@
             </div>
             <div class="collapse navbar-collapse navbar-menubuilder">
                 <ul class="nav navbar-nav navbar-left">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/index.html">Sign In</a></li>
-                    <li><a href="/about-us">About Us</a></li>
-                    <li><a href="/contact.html">Contact Us</a></li>
+                    <li><a href="/">HOME</a></li>
+                    <li><a href="/index.html">SIGN IN</a></li>
+                    <li><a href="/about-us.html">ABOUT US</a></li>
+                    <li><a href="/contact.html">CONTACT US</a></li>
                 </ul>
             </div>
         </div>
     </div>
-    <!-- Login form -->
-    <!--<body class="login">
-        <div class="login-options">
-            <p>Sign into WasteBook</p>
-            <div class="input" id="firebaseui-auth-container"></div>
-        </div>
-    </body>-->
+    <br>
+    <div id="greeting"><p>HOW CAN WE HELP YOU</p><p>IMPROVE TODAY?</p>
+    </div>
+    <div id="intro"><p>We are ready to help you.</p><p>Drop us a line about your concern or what you want to know about WasteBook:</div>
+    <br>
+    <div id="contactform">CONTACT FORM</div>
+    <br>
+    
+    <!-- contact form -->
+    <div id="container">
+    <form action="http://idontknowwhatshouldputhere" method="post" enctype="multipart/form-data">
+
+    <p><label id="fname">First Name(*):</label></p>
+    <p><input type="text" name="firstname" placeholder="Your name.."></p>
+    
+    <p><label id="lname">Last Name:</label></p>
+    <p><input type="text" name="lastname" placeholder="Your last name.."></p>
+    
+    <p><label id="email">Email(*):</label></p>
+    <p><input type="text" placeholder="Your Email"></p>
+    
+    <p><label id="message">Your Message(*):</label></p>
+    <p><textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea></p>
+
+    <input id="submit" type="submit" value="Submit">
+
+    </form>
+    </div>
+    
+    <br><br>
+    
+    <div id="contactform">EMAIL US</div>
+    <br>
+    <a id="email2" href="mailto:wyking1030@gmail.com">wyking1030@gmail.com</a>
+    
+    
+    <br>
+    <br>
+    
+        <div id="contactform">FOLLOW US</div>
+    <br>
+    <a id="email2" href="https://github.com/BigD0M/WasteBook"><img src="/images/github.svg" class="github"></a>
+    <br>
+    <br>
+    <div id="contactform">LOCATION</div>
+    <br>
+    <div id="addr">3700 Willingdon Ave, Burnaby, BC, CANADA V5G 3H2</div>
+   
+    <div id="map">hello</div>
+          <script>
+      function initMap() {
+        var bcit = {lat: 49.248456, lng: -123.001213};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 12,
+          center: bcit
+        });
+        var marker = new google.maps.Marker({
+          position: bcit,
+          map: map
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBoKdEliB6BMZAhh1yFBTqnnLjCnSckc78&callback=initMap">
+    </script>
+    <br>
+
+    
+    
+    <hr>
+    <div id="copyright">Copyright © 2017. WasteBook. All rights reserved.</div>
 </html>
