@@ -1,21 +1,3 @@
-head.title {
-	display: inline-block;
-}
-head.title:after {
-	content: '';
-display: block;
-height: 3px;
-width: 0;
-background: transparent;
-transition: width .5s ease, background-color .5s ease;
-}
-head.title:hover:after {
-width: 100%;
-background: blue;
-}
-
-
-
 html, body {
     width: auto;
     height: 100%;
@@ -27,38 +9,29 @@ html, body {
 
 }
 
-header {
-    background-color: #A7A7A7;
-    min-height: 8%;
-    display: inline-block;
-}
-
-
-
-
-
-
-
 /* WasteBook NavBar Styles */
 #custom-bootstrap-menu.navbar-default .navbar-brand {
-    color: rgba(255, 255, 255, 1);
+    color: black;
     display: inline-block;
+    font-family: Tw Cen MT Condensed;
 }
 
 /* Whole Menu Bar Styles */
 #custom-bootstrap-menu.navbar-default {
     font-size: 24px;
-    background-color: palegoldenrod; 
     border-width: 10px;
     border-radius: 4px;
     margin: 0;
+    background: white;
 }
 
 /* Menu Bar Content Styles */
 #custom-bootstrap-menu.navbar-default .navbar-nav>li>a {
     font-family: Tw Cen MT Condensed;
-    color: rgba(255, 255, 255, 1);
+    color: black;
     display: inline-block;
+    font-size: 25px;
+    font-weight: bold;    
 }
 
 #custom-bootstrap-menu.navbar-default .navbar-nav>li>a:after {
@@ -67,12 +40,12 @@ header {
     height: 5px;
     width: 0;
     background: transparent;
-    transition: width .5s ease, background-color .5s ease;
+    transition: width .5s ease, black .5s ease;
 }
 
 #custom-bootstrap-menu.navbar-default .navbar-nav>li>a:hover:after {
     width: 100%;
-    background: white;
+    background: black;
 }
 
 #greeting {
@@ -88,6 +61,7 @@ header {
 #intro {
     font-family: Tw Cen MT condensed;
     font-size: 24px;
+    text-shadow: 3px 3px black;
     text-align: left;
     margin-left: 100px;
     color: white;
