@@ -1,79 +1,13 @@
-head.title {
-	display: inline-block;
-}
-head.title:after {
-	content: '';
-display: block;
-height: 3px;
-width: 0;
-background: transparent;
-transition: width .5s ease, background-color .5s ease;
-}
-head.title:hover:after {
-width: 100%;
-background: blue;
-}
-
-
-
 html, body {
     width: auto;
     height: 100%;
     background-color: whitesmoke;
-    background-image: url(http://www.ubmi.net/wp-content/uploads/2016/10/temp2.jpg),   url(https://d19fbfhz0hcvd2.cloudfront.net/UC/wp-content/uploads/2014/10/Food-photography-eastern-europe-city-illustrations-banner1.jpg);
-    background-size:cover;
-    background-position: 0px 80px, 0px 910px;
+    background-image: url(http://aurora-awards.com/wp-content/uploads/2017/05/food-wallpaper-food-wallpaper.jpg),   url(http://s1.1zoom.me/big3/841/Meat_products_Vegetables_457159.jpg);
+    background-size: cover,cover;
+    background-position: 0px 0px, 0px 800px;
     background-repeat: no-repeat, no-repeat;
-
 }
 
-header {
-    background-color: #A7A7A7;
-    min-height: 8%;
-    display: inline-block;
-}
-
-
-
-
-
-
-
-/* WasteBook NavBar Styles */
-#custom-bootstrap-menu.navbar-default .navbar-brand {
-    color: rgba(255, 255, 255, 1);
-    display: inline-block;
-}
-
-/* Whole Menu Bar Styles */
-#custom-bootstrap-menu.navbar-default {
-    font-size: 24px;
-    background-color: palegoldenrod; 
-    border-width: 10px;
-    border-radius: 4px;
-    margin: 0;
-}
-
-/* Menu Bar Content Styles */
-#custom-bootstrap-menu.navbar-default .navbar-nav>li>a {
-    font-family: Tw Cen MT Condensed;
-    color: rgba(255, 255, 255, 1);
-    display: inline-block;
-}
-
-#custom-bootstrap-menu.navbar-default .navbar-nav>li>a:after {
-    content: '';
-    display: block;
-    height: 5px;
-    width: 0;
-    background: transparent;
-    transition: width .5s ease, background-color .5s ease;
-}
-
-#custom-bootstrap-menu.navbar-default .navbar-nav>li>a:hover:after {
-    width: 100%;
-    background: white;
-}
 
 #greeting {
     font-family: Tw Cen MT Condensed;
@@ -81,6 +15,7 @@ header {
     font-size: 78px;
     text-align: right;
     color: white;
+    text-shadow: 3px 3px #ff8800;
     line-height: 60%;
     width:100%; 
 }
@@ -92,7 +27,6 @@ header {
     margin-left: 100px;
     color: white;
     line-height: 60%;
-    width:100%;
 }
 
 #contactform {
@@ -121,6 +55,7 @@ header {
 }
 
 #fname{
+    margin-left: 100px;
     margin-top: 20px;
     margin-bottom: 0px;
     color: white;
@@ -130,10 +65,22 @@ header {
 
 #lname, #email, #message, #submit{
     margin-top: 5px;
+    margin-left: 100px;
     margin-bottom: 0px;
     color: white;
     font-family: Tw Cen MT condensed;
     font-size: 20px;
+}
+
+#submit{
+    margin-top: 5px;
+    margin-left: 100px;
+    margin-bottom: 0px;
+    color: white;
+    font-family: Tw Cen MT condensed;
+    font-size: 20px;
+    background-color: #ff8800;
+
 }
 
 #address{
@@ -158,7 +105,7 @@ header {
     margin-top: 20px;
     margin-left: 100px;
     margin-bottom: 40px;
-    color: white;
+    color: #ff8800;
     font-family: Tw Cen MT condensed;
     font-size: 24px;
 }
@@ -193,13 +140,9 @@ header {
     margin-bottom: 20px;
  }
 
-#container {
-    margin-left: 100px;
-    line-height: 0%;
-}
-
 input,textarea {
     height: 35px;
+    margin-left: 100px;
     margin-top: 10px;
     margin-bottom: 10px;
     padding: 5px;
@@ -212,6 +155,10 @@ input:focus {
     border: 3px solid white;
 }
 
+#googlemap{
+    display: none;
+}
+
 #copyright {
     font-family: Tw Cen MT condensed;
     font-size: 20px;
@@ -219,30 +166,88 @@ input:focus {
     width:100%;
 }
 
-#table {
-    width:100%;
-}
 
 
+@media only screen and (max-width : 768px) {
 
+    html, body {
+        background-color: #FAFBD0;
+        background-image: none;
+    }
+ 
+    #intro {
+        font-family: Tw Cen MT condensed;
+        font-size: 24px;
+        text-align: left;
+        margin-top: 100px;
+        margin-left: 40px;
+        text-shadow: 1px 1px black;
+        color: #ff8800;
+        line-height: 60%;
+    }
+    
+    #contactform {
+        font-family: Tw Cen MT condensed;
+        font-size: 36px;
+        font-weight: bold;
+        text-align: left;
+        margin-left: 40px;
+        color: black;
+        display: inline-block;
+    }
 
-
-
-
-#custom-bootstrap-menu.navbar-default .navbar-toggle {
-    border-color: white;
-}
-
-#custom-bootstrap-menu.navbar-default .navbar-toggle:hover,
-#custom-bootstrap-menu.navbar-default .navbar-toggle:focus {
-    background-color: #A7A7A7;
-}
-
-#custom-bootstrap-menu.navbar-default .navbar-toggle .icon-bar {
-    background-color: white;
-}
-
-#custom-bootstrap-menu.navbar-default .navbar-toggle:hover .icon-bar,
-#custom-bootstrap-menu.navbar-default .navbar-toggle:focus .icon-bar {
-    background-color: white;
+    #greeting {
+        color:black;
+    }
+    
+    input,textarea{
+        height: 35px;
+        padding: 5px;
+        border: 2px solid black;
+        font-size: 90%;
+        width:80%;
+        margin-left: 40px;
+        margin-right: 40px;       
+    }
+ 
+    #submit{
+        margin-top: 5px;
+        margin-left: 40px;
+        margin-right: 40px;
+        color: white;
+        font-family: Tw Cen MT condensed;
+        font-size: 20px;
+    }
+    
+    #fname, #lname, #email, #message{
+        display:none;
+    }
+    
+    #email2{
+        margin-top: 20px;
+        margin-left: 60px;
+        margin-bottom: 40px;
+        color: #ff8800;
+        font-family: Tw Cen MT condensed;
+        font-size: 24px;
+    }
+    
+    #addr{
+        margin-left: 60px;
+        color: black;
+        font-family: Tw Cen MT condensed;
+        font-size: 24px;
+    }
+    
+    #googlemap{
+        display: inline;
+        margin-left: 60px;
+        font-family: Tw Cen MT condensed;
+        color: #ff8800;
+        font-size: 20px;
+    }
+    
+    #map{
+        display: none;
+    }
 }

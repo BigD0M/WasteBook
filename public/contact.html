@@ -3,107 +3,168 @@
     <head>
         <title>WasteBook | Contact Us</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- Bootstrap & styles -->
-        <link rel="stylesheet" href="/styles/bootstrap.min.css" type="text/css"/>
-        <link rel="icon" href="/images/notepad.png"> <!-- web icon -->
-        <link rel="stylesheet" type="text/css" href="/styles/contact_style.css"> <!-- style sheet -->
         <meta charset="utf-8" />
+        
+		<!-- Bootstrap & styles -->
+        <link rel="icon" href="/images/WasteBook.png">
+		<link rel="stylesheet" href="/styles/bootstrap.min.css" type="text/css"/>     
+		<link rel="stylesheet" href="/styles/contact_style.css" type="text/css" /> 
+		<link rel="stylesheet" href="/styles/WasteBook.css" type="text/css" />
+        <link rel="stylesheet" href="styles/signIn.css" type="text/css" />
+        <link rel="stylesheet" href="styles/modalBox.css" type="text/css" />
+        
+        <!-- JS -->
         <script src="/script/jquery.min.js"></script>
         <script src="/script/bootstrap.min.js"></script>
-        <!-- Firebase -->
+        <script src="script/modal.js"></script>
+        <script type="text/javascript" src="/script/googlemap.js"></script>
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+        
+		<!-- Firebase -->
         <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
-        <script src="/script/firebaseStart.js"></script>
+        <script src="script/firebaseStart.js"></script>
         <script src="https://cdn.firebase.com/libs/firebaseui/1.0.1/firebaseui.js"></script>
         <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/1.0.1/firebaseui.css" />
-        <script src="https://apis.google.com/js/platform.js" async defer></script>
-        <script src="/script/signin.js"></script>
+        <script src="script/signout.js"></script>
+        <script src="script/signin.js"></script>
     </head>
+	
     <!-- NavBar -->
+   <section id="top"></section>
     <div id="custom-bootstrap-menu" class="navbar navbar-default " role="navigation">
         <div class="container-fluid">
-            <div class="navbar-header"><a class="navbar-brand" href="/profile.html">WasteBook</a>
+            <div class="navbar-header"><a class="navbar-brand" href="#">WasteBook</a>
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-menubuilder"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
                 </button>
             </div>
             <div class="collapse navbar-collapse navbar-menubuilder">
                 <ul class="nav navbar-nav navbar-left">
-                    <li><a href="/">HOME</a></li>
-                    <li><a href="/index.html">SIGN IN</a></li>
-                    <li><a href="/about-us.html">ABOUT US</a></li>
-                    <li><a href="/contact.html">CONTACT US</a></li>
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a class='signOut'>Sign out</a></li>
+                    <li><a id='signIn'>Sign in</a></li>
+                    <script>
+                        
+                        
+                        var user =  new Promise(function(resolve, reject) {
+                            firebase.auth().onAuthStateChanged(function (user) {
+                                resolve(user !== null);
+                            });
+                        });
+
+                        user.then(function(status) {
+
+                            if (status) {
+                              $("#signIn").hide();
+                              $(".signOut").show();
+                            } else {
+                                console.log("logged out");
+                              $(".signOut").hide();
+                              $("#signIn").show();
+                            }
+                        });
+                        
+                    </script>
+                    <li><a href="affiliated-apps.html">Affiliated Apps</a></li>
+                    <li><a href="/contact.html">Contact Us</a></li>
                 </ul>
             </div>
         </div>
     </div>
-    <br>
-    <div id="greeting"><p>HOW CAN WE HELP YOU</p><p>IMPROVE TODAY?</p>
-    </div>
-    <div id="intro"><p>We are ready to help you.</p><p>Drop us a line about your concern or what you want to know about WasteBook:</div>
-    <br>
-    <div id="contactform">CONTACT FORM</div>
-    <br>
     
-    <!-- contact form -->
-    <div id="container">
-    <form action="http://idontknowwhatshouldputhere" method="post" enctype="multipart/form-data">
+	<br>
+    
+	<body>
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">&times;</span>
+                </div>
+                <div class="login-options">
+                    <p>Sign into WasteBook</p>
+                    <div class="input" id="firebaseui-auth-container"></div>
+                </div>
+            </div>
+        </div>
+		<!-- Title Part -->
+		<div id="greeting"><p>HOW CAN WE HELP YOU</p><p>IMPROVE TODAY?</p></div>
+		<div id="intro"><p>We are ready to help you.</p><p>Drop us a line about your concern or what you want to know about WasteBook:</div>
+	
+		<br>
+	
+		<!-- Contact Form -->
+			<!-- Contact Form Title -->
+			<div id="contactform">CONTACT FORM</div>
+			
+			<br>
 
-    <p><label id="fname">First Name(*):</label></p>
-    <p><input type="text" name="firstname" placeholder="Your name.."></p>
-    
-    <p><label id="lname">Last Name:</label></p>
-    <p><input type="text" name="lastname" placeholder="Your last name.."></p>
-    
-    <p><label id="email">Email(*):</label></p>
-    <p><input type="text" placeholder="Your Email"></p>
-    
-    <p><label id="message">Your Message(*):</label></p>
-    <p><textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea></p>
+			<!-- Forms & Contents -->
+			<div id="container">
+				<form action="mailto:wyking1030@gmail.com" method="post" enctype="text/plain">
 
-    <input id="submit" type="submit" value="Submit">
+					<p><label id="fname">First Name(*):</label></p>
+					<p><input type="text" name="firstname" placeholder="Enter Your First Name" required></p>
+    
+					<p><label id="lname">Last Name:</label></p>
+					<p><input type="text" name="lastname" placeholder="Enter Your Last Name"></p>
+    
+					<p><label id="email">Email(*):</label></p>
+					<p><input type="text" placeholder="Your Email" required></p>
+    
+					<p><label id="message">Your Message(*):</label></p>
+					<p><textarea id="subject" name="subject" placeholder="Write something.." style="height:200px" required></textarea></p>
 
-    </form>
-    </div>
+					<input id="submit" type="submit" value="Submit">
+				
+				</form>
+			</div>
     
-    <br><br>
+		<br><br>
     
-    <div id="contactform">EMAIL US</div>
-    <br>
-    <a id="email2" href="mailto:wyking1030@gmail.com">wyking1030@gmail.com</a>
+		<!-- Email -->
+		<div id="contactform">EMAIL US</div>
+		<br>
+		<a id="email2" href="mailto:wyking1030@gmail.com">wyking1030@gmail.com</a>
     
+		<br><br>
     
-    <br>
-    <br>
-    
-        <div id="contactform">FOLLOW US</div>
-    <br>
-    <a id="email2" href="https://github.com/BigD0M/WasteBook"><img src="/images/github.svg" class="github"></a>
-    <br>
-    <br>
-    <div id="contactform">LOCATION</div>
-    <br>
-    <div id="addr">3700 Willingdon Ave, Burnaby, BC, CANADA V5G 3H2</div>
+		<!-- Follow Us -->
+		<div id="contactform">FOLLOW US</div>
+		<br>
+		<a id="email2" alt="github" href="https://github.com/BigD0M/WasteBook"><img src="/images/github.png" class="github"></a>
+		
+		<br><br>
+	
+		<!-- Location -->
+			<!-- Text -->
+			<div id="contactform">LOCATION</div>
+			<br>
+			<div id="addr">3700 Willingdon Ave, Burnaby, BC, CANADA V5G 3H2</div>
    
-    <div id="map">hello</div>
-          <script>
-      function initMap() {
-        var bcit = {lat: 49.248456, lng: -123.001213};
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 12,
-          center: bcit
-        });
-        var marker = new google.maps.Marker({
-          position: bcit,
-          map: map
-        });
-      }
-    </script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBoKdEliB6BMZAhh1yFBTqnnLjCnSckc78&callback=initMap">
-    </script>
-    <br>
-
+			<!-- Google Map-->
+			<a id="googlemap" style="cursor: pointer;" onclick="myNavFunc()">(Open On GoogleMap)</a>
     
-    
-    <hr>
+			<div id="map">hello</div>
+				<script>
+				function initMap() {
+					var bcit = {lat: 49.248456, lng: -123.001213};
+					var map = new google.maps.Map(document.getElementById('map'), {
+						zoom: 12,
+						center: bcit
+					});
+					var marker = new google.maps.Marker({
+						position: bcit,
+						map: map
+					});
+				}
+				</script>
+				<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBoKdEliB6BMZAhh1yFBTqnnLjCnSckc78&callback=initMap"></script>
+		
+		<br><br>
+	</body>
+	
+	<!-- Footer -->
     <div id="copyright">Copyright © 2017. WasteBook. All rights reserved.</div>
+
 </html>
