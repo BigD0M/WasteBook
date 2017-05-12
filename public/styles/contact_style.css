@@ -4,49 +4,10 @@ html, body {
     background-color: whitesmoke;
     background-image: url(http://aurora-awards.com/wp-content/uploads/2017/05/food-wallpaper-food-wallpaper.jpg),   url(http://s1.1zoom.me/big3/841/Meat_products_Vegetables_457159.jpg);
     background-size: cover,cover;
-    background-position: 0px 80px, 0px 800px;
+    background-position: 0px 0px, 0px 800px;
     background-repeat: no-repeat, no-repeat;
-
 }
 
-/* WasteBook NavBar Styles */
-#custom-bootstrap-menu.navbar-default .navbar-brand {
-    color: black;
-    display: inline-block;
-    font-family: Tw Cen MT Condensed;
-}
-
-/* Whole Menu Bar Styles */
-#custom-bootstrap-menu.navbar-default {
-    font-size: 24px;
-    border-width: 10px;
-    border-radius: 4px;
-    margin: 0;
-    background: white;
-}
-
-/* Menu Bar Content Styles */
-#custom-bootstrap-menu.navbar-default .navbar-nav>li>a {
-    font-family: Tw Cen MT Condensed;
-    color: black;
-    display: inline-block;
-    font-size: 25px;
-    font-weight: bold;    
-}
-
-#custom-bootstrap-menu.navbar-default .navbar-nav>li>a:after {
-    content: '';
-    display: block;
-    height: 5px;
-    width: 0;
-    background: transparent;
-    transition: width .5s ease, black .5s ease;
-}
-
-#custom-bootstrap-menu.navbar-default .navbar-nav>li>a:hover:after {
-    width: 100%;
-    background: black;
-}
 
 #greeting {
     font-family: Tw Cen MT Condensed;
@@ -205,23 +166,6 @@ input:focus {
     width:100%;
 }
 
-#custom-bootstrap-menu.navbar-default .navbar-toggle {
-    border-color: black;
-}
-
-#custom-bootstrap-menu.navbar-default .navbar-toggle:hover,
-#custom-bootstrap-menu.navbar-default .navbar-toggle:focus {
-    background-color: #A7A7A7;
-}
-
-#custom-bootstrap-menu.navbar-default .navbar-toggle .icon-bar {
-    background-color: black;
-}
-
-#custom-bootstrap-menu.navbar-default .navbar-toggle:hover .icon-bar,
-#custom-bootstrap-menu.navbar-default .navbar-toggle:focus .icon-bar {
-    background-color: black;
-}
 
 
 @media only screen and (max-width : 768px) {
