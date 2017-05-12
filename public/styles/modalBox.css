@@ -52,8 +52,7 @@
 }
             
 .modal-header {
-    background-color: #ff8800;
-    color: white;
+    border-color: transparent;
 }
 
 #signIn {
