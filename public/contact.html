@@ -17,6 +17,7 @@
         <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/1.0.1/firebaseui.css" />
         <script src="https://apis.google.com/js/platform.js" async defer></script>
         <script src="/script/signin.js"></script>
+        <script type="text/javascript" src="/script/googlemap.js"></script>
     </head>
     <!-- NavBar -->
     <div id="custom-bootstrap-menu" class="navbar navbar-default " role="navigation">
@@ -83,6 +84,8 @@
     <br>
     <div id="addr">3700 Willingdon Ave, Burnaby, BC, CANADA V5G 3H2</div>
    
+    <a id="googlemap" style="cursor: pointer;" onclick="myNavFunc()">(Open On GoogleMap)</a>
+    
     <div id="map">hello</div>
           <script>
       function initMap() {
