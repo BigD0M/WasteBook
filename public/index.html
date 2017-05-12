@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
         <title>WasteBook</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta charset="utf-8" />
@@ -20,6 +21,7 @@
         <script src="script/homePage.js"></script>
         
         <!-- Firebase -->
+        
         <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
         <script src="/script/firebaseStart.js"></script>
         <script src="https://cdn.firebase.com/libs/firebaseui/1.0.1/firebaseui.js"></script>
@@ -30,6 +32,7 @@
     </head>
     
     <!-- NavBar -->
+    <section id="top"></section>
     <div id="custom-bootstrap-menu" class="navbar navbar-default " role="navigation">
         <div class="container-fluid">
             <div class="navbar-header"><a class="navbar-brand" href="#">WasteBook</a>
@@ -43,12 +46,13 @@
                     <li><a href="/index.html#Stats">Stats</a></li>
                     <li><a href="/index.html#Solution">Solution</a></li>
                     <li id="signIn"><a>Sign In</a></li>
+                    <li><a href="/contact.html">Contact Us</a></li>
                 </ul>
             </div>
         </div>
     </div>
     <body>
-        <!-- The Modal -->
+         <!-- The Modal -->
         <div id="myModal" class="modal">
             <!-- Modal content -->
             <div class="modal-content">
@@ -73,44 +77,22 @@
             <span>
                 <p class="textBlockHeading">WHAT IS FOOD WASTE?</p>
                 <p class="textBlockText">
-                    Food waste is the act of throwing away food that can still be used. An innocent mistake everyone is guilty of from time to time. However, when large bodies of people are making the same mistakes, that's when it becomes a concern. From your wallet all the way to the very climate we live in, food waste just causes unnecessary problems.
+                    Food waste is the act of throwing away food that can still be used. An innocent mistake everyone is guilty of from time to time. But what people usually don't consider is the consequences caused by food waste. They don't consider, the money they're spending, the space being taken up in their fridge/pantry, how it attracts bugs and wild animals, the amount of methane (a greenhouse gas) being released into the atmosphere, among other consequences.
                 </p>
                 
                 <p class="textBlockText">
-                     Before the food even enters your home, you are probably carrying food you won't even eat, so money is already being wasted. Once the food to be wasted enters, it either goes unopened until it "expires" or it gets thrown out due to a loss in <i>preferred</i> quality.
+                     Now this and a lot more can be avoided if we as a people decided to make slight changes in our behaviour. Even something as small as not throwing away food just because it's past the "Best Before" date can make a huge difference. Sidenote: the "Best Before" date is simply a guess from the provider of when they think the food will be most fresh, it has no bearing on when the food is no longer edible. But for some reason, people aware of this issue still choose not to act. And people have tried to make it as easy as possible, with apps that give you recipes for aged food, that tell you when stores are throwing away food that they're willing to give you for a big discount, or allows you to <b>record the amount of food you throw away for self-awareness</b>.
                 </p>
                 
                 <p class="textBlockText">
-                     The "expiration" date is the most common reason people throw away food. People seem to have this misconception that they shoud avoid this food because it is no longer edible or safe. The truth is, a lot of the food getting thrown away are still perfectly safe to eat. "Sell by" is meant to tell store employees when to pull their items off the shelves, regardless of its current state, and "best before" is when the supplier <b>thinks</b> the food will begin to lose its fresh feature.
-                </p>
-                
-                <p class="textBlockText">
-                     As for the loss in preferred quality, even if you have a perfectly valid reason to not eat the food in its state, there are still other options. You can:
-                </p>
-                    
-                <li>You can use the ingredients in other ways (ground stale bread to bread crumbs to make breaded chicken)</li>
-                    
-                <li>Use the food for household chores (pour sour milk over garden to provide calcium)</li>
-                    
-                <li>Give the food to others who may like it</li>
-                        
-                <li>Give it to a local farmer to feed to their animals</li>
-                    
-                <li>And many other options!</li>
-                
-                <p class="textBlockText">
-                    At this point you may have pointed out compost and how it should prevent food from being truly wasted. What you may not know, is that composting has consequences. The first being that as your waste waits outside to be picked up, it attracts vermin and bugs. The second being, that it gets added to the already gigantic landfills. And thirdly, as the large body of food decomposes, it releases a huge amount of methane, a greenhouse gas, into the atmosphere.
-                </p>
-                
-                <p class="textBlockText">
-                    To recap, food waste eats away money unnecessarily, takes up space, gets thrown away even though there are other options, attracts vermin, and contributes to climate change. But to put things into perspective, let's look at the numbers.
+                    The common reasons for this appear to be that people don't feel as though they're making a difference, they find it to be a hassle, or they simply don't think they're contributing much to the problem, therefore, don't need to do anything, to begin with.
                 </p>
             </span>
         </div>
         <div id="Stats" class="graphicsBlock">
             <span>
                 <p class="textBlockHeading">STATISTICS</p>
-                <img class="statGraphic" src="images/stat-1-v3.png">
+                <img class="statGraphic" src="images/stat-1-v4.png">
                 <img class="statGraphic" src="images/stat-3.png">
                 <img class="statGraphic" src="images/stat-4.png">
                 <img class="statGraphic" src="images/stat-2.png">
@@ -125,96 +107,150 @@
             <span>
                 <p class="textBlockHeading">OUR SOLUTION</p>
                 <p class="textBlockText">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean a massa in elit cursus laoreet eu vel quam. Sed sed luctus purus. Donec mattis risus at condimentum euismod. Fusce at commodo lectus. Cras luctus tellus in libero dignissim, nec blandit neque ullamcorper. Phasellus a ante justo. Cras nec quam neque. Vestibulum posuere ipsum sit amet enim vehicula elementum. Mauris volutpat elit quis facilisis suscipit. Nullam maximus rutrum dui at consectetur. Nullam ac interdum nisi. Ut convallis velit at orci fermentum, et dapibus erat dapibus. Nullam eget velit sed velit tempus dapibus. Maecenas vitae vulputate nunc, ut cursus dui. Cras enim arcu, venenatis sed urna eu, tincidunt porttitor erat. Proin auctor nisi ipsum, at vehicula tortor imperdiet in.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean a massa in elit cursus laoreet eu vel quam. Sed sed luctus purus. Donec mattis risus at condimentum euismod. Fusce at commodo lectus. Cras luctus tellus in libero dignissim, nec blandit neque ullamcorper. Phasellus a ante justo. Cras nec quam neque. Vestibulum posuere ipsum sit amet enim vehicula elementum. 
                 </p>
                 
                 <p class="textBlockText">
-                    Aenean id sapien consectetur, condimentum lorem sit amet, ultricies eros. Sed in porta massa, in varius magna. Quisque et ex cursus, sodales metus suscipit, ultrices justo. Sed semper enim eget tellus vehicula interdum. Donec eu efficitur tellus. Fusce in euismod ligula, consectetur egestas lectus. Nam et massa dolor. Nulla vestibulum purus at hendrerit lacinia. Ut tempor risus id eros ornare, eget hendrerit augue volutpat.
+                    Aenean id sapien consectetur, condimentum lorem sit amet, ultricies eros. Sed in porta massa, in varius magna. Quisque et ex cursus, sodales metus suscipit, ultrices justo. Sed semper enim eget tellus vehicula interdum. Donec eu efficitur tellus. Fusce in euismod ligula, consectetur egestas lectus. Nam et massa dolor.
                 </p>
 
                 <p class="textBlockText">
                     Aliquam a scelerisque diam. Duis eu facilisis dui. Cras tempus eros dolor, quis tempus ipsum luctus quis. Nulla at tristique ipsum. Duis elementum id odio non euismod. Integer at congue leo, eu hendrerit eros. Nam convallis finibus odio, a ullamcorper neque malesuada non. Sed id dui nibh. Vivamus aliquet lectus at mauris imperdiet, eget vulputate lorem dictum.
                 </p>
-
-                <p class="textBlockText">
-                    Ut at accumsan libero, quis bibendum quam. Praesent rhoncus nunc at mauris pellentesque, eget ultrices justo rhoncus. Mauris vestibulum justo in urna varius, sed convallis tortor ultricies. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus vulputate ante finibus lacus efficitur suscipit. Phasellus euismod augue in tincidunt fermentum. Cras sagittis ante purus, ac ultricies orci maximus in. Donec viverra molestie ante a bibendum. Ut vitae eros a ante bibendum facilisis blandit vitae ex. Nullam id pharetra turpis. Nunc vestibulum leo hendrerit massa porta, vel tincidunt elit rhoncus. Nulla vitae mollis erat, non vehicula felis. Cras eu iaculis justo. Nunc rutrum lectus nec sodales ornare. Quisque ac sapien aliquet, tincidunt tortor nec, porta felis.
-                </p>
-                
-                <p class="textBlockText">
-                    Duis ullamcorper sem a accumsan lacinia. Praesent dictum vitae eros sed tempus. Etiam elementum pharetra nisl a ornare. Etiam nec gravida lectus, eu luctus risus. Maecenas et blandit nunc. Praesent sapien turpis, auctor ut congue eu, eleifend ut lorem. Mauris id ex in magna sagittis hendrerit. Nunc non cursus sem. Phasellus sit amet ipsum eleifend, elementum nibh non, sollicitudin turpis. In auctor accumsan tortor, eget feugiat lectus ullamcorper a. Etiam a eros pretium, commodo ante in, euismod odio.
-                </p>
             </span>
         </div>
-        <div id="Stats" class="graphicsBlock">
+        <div id="SignUp" class="graphicsBlock">
             <span>
                 <p class="textBlockHeading">LET US HELP YOU HELP YOURSELF</p>
                 <p id="signUpButton">SIGN UP</p>
             </span>
+            <section id="backToTopButton" class="demo">
+	           <a href="#top"><span></span><span></span><span></span></a>
+            </section>
         </div>
         <script>
-// Get the modal
-var modal = document.getElementById('myModal');
+            
+            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
+                document.getElementById("Hook").style['height'] = "100vh";
+                document.getElementsByClassName("imageBlock")[0].style['background-size'] = "auto 100%";
+                document.getElementsByClassName("imageBlock")[1].style['background-size'] = "auto 100%";
+                document.getElementsByClassName("imageBlock")[0].style.maxHeight = "94vh";
+                document.getElementsByClassName("imageBlockHeading")[0].innerHTML = "WAS THE LAST TIME YOU THREW AWAY FOOD AVOIDABLE?";
+                document.getElementsByClassName("imageBlockHeading")[0].style['font-size'] = "2.2em";
+                document.getElementsByClassName("imageBlockHeading")[1].style['font-size'] = "2.2em";
+                document.getElementsByClassName("imageBlockSubHeading")[0].style['font-size'] = "1.4em";
+                document.getElementsByClassName("imageBlockCaption")[0].style['font-size'] = "1.2em";
+                document.getElementsByClassName("textBlock")[0].style.padding = "35px 0";
+                document.getElementsByClassName("textBlock")[1].style.padding = "35px 0";
+                document.getElementsByClassName("textBlockHeading")[0].innerHTML = "FOOD WASTE?";
+                document.getElementsByClassName("textBlockText")[0].innerHTML = "Food waste is the act of throwing away food that can still be used. An innocent mistake. But what people don't consider is the consequences this act causes. Like the money they're spending, the space the food takes takes, the bugs and vermin it attracts, the amount of methane (a greenhouse gas) it releases into the atmosphere, and many others.";
+                document.getElementsByClassName("textBlockText")[1].innerHTML = "This can be avoided if everyone decided to make some slight changes in our behaviour. Even something as small as not throwing away food just because it's past the \"Best Before\" date can make a huge difference. But for some reason, people still choose not to act. And others have tried to make it as easy as possible, with apps that give you recipes for old food, apps that tell you what stores are discounting food approaching the \"Sell By\" date, and apps that allow you to <b>record the amount of food you throw away for self-awareness</b>.";
+                document.getElementsByClassName("graphicsBlock")[0].style.padding = "35px 0";
+                document.getElementsByClassName("statGraphic")[0].style.width = "35%";
+                document.getElementsByClassName("statGraphic")[1].style.width = "35%";
+                document.getElementsByClassName("statGraphic")[2].style.width = "35%";
+                document.getElementsByClassName("statGraphic")[3].style.width = "35%";
+                document.getElementsByClassName("statGraphic")[0].style.marginBottom = "35px";
+                document.getElementsByClassName("statGraphic")[1].style.marginBottom = "35px";
+                document.getElementsByClassName("statGraphic")[2].style.marginBottom = "35px";
+                document.getElementsByClassName("statGraphic")[3].style.marginBottom = "35px"; 
+                document.getElementById("signUpButton").style['margin'] = "0 10%"; 
+                document.getElementById("signUpButton").style['background-color'] = "white"; 
+                document.getElementById("signUpButton").style['color'] = "#ff8800";
+                
+                document.getElementById("backToTopButton").innerHTML = "";
+            }
+                            
+            // Get the modal
+            var modal = document.getElementById('myModal');
 
-// Get the button that opens the modal
-var btn = document.getElementById("signIn");
-var btn2 = document.getElementById("signUpButton");
+            // Get the button that opens the modal
+            var btn = document.getElementById("signIn");
+            var btn2 = document.getElementById("signUpButton");
 
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+            // Get the <span> element that closes the modal
+            var span = document.getElementsByClassName("close")[0];
 
-// When the user clicks the button, open the modal 
-btn.onclick = function() {
-    modal.style.display = "block";
-}
+            // When the user clicks the button, open the modal 
+            btn.onclick = function() {
+                modal.style.display = "block";
+            }
 
-btn2.onclick = function() {
-    modal.style.display = "block";
-}
+            btn2.onclick = function() {
+                modal.style.display = "block";
+            }
 
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-    modal.style.display = "none";
-}
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function() {
+                modal.style.display = "none";
+            }
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
 
-window.onload = function() {
-    if (document.getElementById('Hook').offsetHeight >= 600) {
-        document.getElementById('Hook').style.lineHeight = "600px";
-    }
-    if (document.getElementById('LeadUp').offsetHeight >= 600) {
-        document.getElementById('LeadUp').style.lineHeight = "600px";
-    }
-}
+            window.onload = function() {
+                if (document.getElementById('Hook').offsetHeight >= 600) {
+                    document.getElementById('Hook').style.lineHeight = "600px";
+                }
+                
+                if (document.getElementById('LeadUp').offsetHeight >= 600) {
+                    document.getElementById('LeadUp').style.lineHeight = "600px";
+                }
+            }
 
-window.onresize = function() {
-    if (document.getElementById('Hook').clientHeight > document.getElementById('Hook').offsetHeight) {
-        document.getElementById('Hook').style.lineHeight = document.getElementById('Hook').clientHeight;
-    }
-    if (document.getElementById('Hook').offsetHeight > 600) {
-        document.getElementById('Hook').style.lineHeight = "600px";
-    } 
-    if (document.getElementById('Hook').offsetHeight < "600px") {
-        document.getElementById('Hook').style.lineHeight = "75vw";
-    }
-}
+            window.onresize = function() {
+                if (document.getElementById('Hook').clientHeight > document.getElementById('Hook').offsetHeight) {
+                    document.getElementById('Hook').style.lineHeight = document.getElementById('Hook').clientHeight;
+                }
+                
+                if (document.getElementById('Hook').offsetHeight > 600) {
+                    document.getElementById('Hook').style.lineHeight = "600px";
+                } 
+                
+                if (document.getElementById('Hook').offsetHeight < "600px") {
+                    document.getElementById('Hook').style.lineHeight = "75vw";
+                }
+                if (document.getElementById('LeadUp').clientHeight > document.getElementById('LeadUp').offsetHeight) {
+                    document.getElementById('LeadUp').style.lineHeight = document.getElementById('LeadUp').clientHeight;
+                }
+                
+                if (document.getElementById('LeadUp').offsetHeight > 600) {
+                    document.getElementById('LeadUp').style.lineHeight = "600px";
+                } 
+                
+                if (document.getElementById('LeadUp').offsetHeight < "600px") {
+                    document.getElementById('LeadUp').style.lineHeight = "75vw";
+                }
+            }
+            
+            $(document).ready(function(){
+  // Add smooth scrolling to all links
+  $("a").on('click', function(event) {
 
-window.onresize = function() {
-    if (document.getElementById('LeadUp').clientHeight > document.getElementById('LeadUp').offsetHeight) {
-        document.getElementById('LeadUp').style.lineHeight = document.getElementById('LeadUp').clientHeight;
-    }
-    if (document.getElementById('LeadUp').offsetHeight > 600) {
-        document.getElementById('LeadUp').style.lineHeight = "600px";
-    } 
-    if (document.getElementById('LeadUp').offsetHeight < "600px") {
-        document.getElementById('LeadUp').style.lineHeight = "75vw";
-    }
-}
-</script>
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});
+        </script>
     </body>
 </html>

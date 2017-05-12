@@ -52,6 +52,7 @@ html, body {
     background-color: white;
 }
 
+/* Customized scroll bar */
 ::-webkit-scrollbar {
     display: none;
 }

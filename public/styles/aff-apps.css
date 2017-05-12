@@ -1,0 +1,24 @@
+html, body {
+    width: auto;
+    height: 100%;
+    background-color: moccasin;
+}
+
+.aff-apps {
+    display: block;
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    margin-top: 10%;
+}
+
+.aff-apps-alt {
+    display: block;
+    width: 200px;
+    height: 75px;
+    margin: auto;
+    margin-top: 10%;
+}
+#title {
+    text-align: center;
+}
