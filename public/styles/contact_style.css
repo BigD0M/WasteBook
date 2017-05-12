@@ -2,15 +2,12 @@ html, body {
     width: auto;
     height: 100%;
     background-color: whitesmoke;
-    background-image: url(http://www.ubmi.net/wp-content/uploads/2016/10/temp2.jpg),   url(https://d19fbfhz0hcvd2.cloudfront.net/UC/wp-content/uploads/2014/10/Food-photography-eastern-europe-city-illustrations-banner1.jpg);
-    background-size:cover;
-    background-position: 0px 80px, 0px 910px;
+    background-image: url(http://aurora-awards.com/wp-content/uploads/2017/05/food-wallpaper-food-wallpaper.jpg),   url(http://s1.1zoom.me/big3/841/Meat_products_Vegetables_457159.jpg);
+    background-size: cover,cover;
+    background-position: 0px 80px, 0px 800px;
     background-repeat: no-repeat, no-repeat;
 
 }
-
-
-
 
 /* WasteBook NavBar Styles */
 #custom-bootstrap-menu.navbar-default .navbar-brand {
@@ -57,6 +54,7 @@ html, body {
     font-size: 78px;
     text-align: right;
     color: white;
+    text-shadow: 3px 3px #ff8800;
     line-height: 60%;
     width:100%; 
 }
@@ -64,7 +62,6 @@ html, body {
 #intro {
     font-family: Tw Cen MT condensed;
     font-size: 24px;
-    text-shadow: 3px 3px black;
     text-align: left;
     margin-left: 100px;
     color: white;
@@ -114,6 +111,17 @@ html, body {
     font-size: 20px;
 }
 
+#submit{
+    margin-top: 5px;
+    margin-left: 100px;
+    margin-bottom: 0px;
+    color: white;
+    font-family: Tw Cen MT condensed;
+    font-size: 20px;
+    background-color: #ff8800;
+
+}
+
 #address{
     margin-top: 5px;
     margin-left: 100px;
@@ -136,7 +144,7 @@ html, body {
     margin-top: 20px;
     margin-left: 100px;
     margin-bottom: 40px;
-    color: white;
+    color: #ff8800;
     font-family: Tw Cen MT condensed;
     font-size: 24px;
 }
@@ -197,16 +205,6 @@ input:focus {
     width:100%;
 }
 
-#table {
-    width:100%;
-}
-
-
-
-
-
-
-
 #custom-bootstrap-menu.navbar-default .navbar-toggle {
     border-color: black;
 }
@@ -225,36 +223,39 @@ input:focus {
     background-color: black;
 }
 
+
 @media only screen and (max-width : 768px) {
-    body { 
-        width: auto;
-        height: 100%;
-        background-color: whitesmoke;
-        background-image: none, none;
 
-        }
-
+    html, body {
+        background-color: #FAFBD0;
+        background-image: none;
+    }
+ 
     #intro {
         font-family: Tw Cen MT condensed;
         font-size: 24px;
-        text-shadow: 3px 3px black;
         text-align: left;
         margin-top: 100px;
         margin-left: 40px;
-        color: white;
+        text-shadow: 1px 1px black;
+        color: #ff8800;
         line-height: 60%;
     }
     
     #contactform {
-    font-family: Tw Cen MT condensed;
-    font-size: 36px;
-    font-weight: bold;
-    text-align: left;
-    margin-left: 40px;
-    color: rgba(255, 255, 255, 1);
-    display: inline-block;
+        font-family: Tw Cen MT condensed;
+        font-size: 36px;
+        font-weight: bold;
+        text-align: left;
+        margin-left: 40px;
+        color: black;
+        display: inline-block;
     }
 
+    #greeting {
+        color:black;
+    }
+    
     input,textarea{
         height: 35px;
         padding: 5px;
@@ -282,14 +283,14 @@ input:focus {
         margin-top: 20px;
         margin-left: 60px;
         margin-bottom: 40px;
-        color: white;
+        color: #ff8800;
         font-family: Tw Cen MT condensed;
         font-size: 24px;
     }
     
     #addr{
         margin-left: 60px;
-        color: white;
+        color: black;
         font-family: Tw Cen MT condensed;
         font-size: 24px;
     }
@@ -298,12 +299,11 @@ input:focus {
         display: inline;
         margin-left: 60px;
         font-family: Tw Cen MT condensed;
-        color: white;
+        color: #ff8800;
         font-size: 20px;
     }
     
     #map{
         display: none;
     }
-
 }
