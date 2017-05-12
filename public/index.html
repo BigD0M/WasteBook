@@ -46,7 +46,6 @@
                     <li><a href="/index.html#Stats">Stats</a></li>
                     <li><a href="/index.html#Solution">Solution</a></li>
                     <li id="signIn"><a>Sign In</a></li>
-                    <li><a href="/contact.html">Contact Us</a></li>
                 </ul>
             </div>
         </div>
@@ -105,17 +104,18 @@
         </div>
         <div id="Solution" class="textBlock">
             <span>
-                <p class="textBlockHeading">OUR SOLUTION</p>
+                <p class="textBlockHeading">OUR SOLUTION: WasteBook</p>
+                <img id="MockUp" src="images/Desktop+Mobile-Mockup.png">
                 <p class="textBlockText">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean a massa in elit cursus laoreet eu vel quam. Sed sed luctus purus. Donec mattis risus at condimentum euismod. Fusce at commodo lectus. Cras luctus tellus in libero dignissim, nec blandit neque ullamcorper. Phasellus a ante justo. Cras nec quam neque. Vestibulum posuere ipsum sit amet enim vehicula elementum. 
+                    WasteBook is a web application that allows you to input the amount of food you waste, the reason why,  the amount your threw away, and other optional info. Once it gets the info it will provide you with a score and then compare your score with other users with all sorts of different demographics and give you a rank. It will also keep track of your common reasons and waste items and based on those patterns, it will recommend other apps that will help you most.
                 </p>
                 
                 <p class="textBlockText">
-                    Aenean id sapien consectetur, condimentum lorem sit amet, ultricies eros. Sed in porta massa, in varius magna. Quisque et ex cursus, sodales metus suscipit, ultrices justo. Sed semper enim eget tellus vehicula interdum. Donec eu efficitur tellus. Fusce in euismod ligula, consectetur egestas lectus. Nam et massa dolor.
+                    So what makes this different from any other food waste diary app? Well of course there's the rank feature that takes our product past awareness and productivity and introduces a competitive environment where everyone is basically trying to reach the top percentages. Aside from that, our app also recommends apps based on the user's behaviour rather than trying to promote random apps simply waiting to see what sticks.
                 </p>
 
                 <p class="textBlockText">
-                    Aliquam a scelerisque diam. Duis eu facilisis dui. Cras tempus eros dolor, quis tempus ipsum luctus quis. Nulla at tristique ipsum. Duis elementum id odio non euismod. Integer at congue leo, eu hendrerit eros. Nam convallis finibus odio, a ullamcorper neque malesuada non. Sed id dui nibh. Vivamus aliquet lectus at mauris imperdiet, eget vulputate lorem dictum.
+                    Our number 1 priority in making this app is to put you, the user, first and respect your choices and preferences. We won't punish you for not engaging, we won't make you type the same stuff over and over again, and we especially won't try to deliver less than our best quality. All we ask is that you give us a chance to prove ourselves to you.
                 </p>
             </span>
         </div>
@@ -154,6 +154,8 @@
                 document.getElementsByClassName("statGraphic")[1].style.marginBottom = "35px";
                 document.getElementsByClassName("statGraphic")[2].style.marginBottom = "35px";
                 document.getElementsByClassName("statGraphic")[3].style.marginBottom = "35px"; 
+                
+                document.getElementById("MockUp").style['min-width'] = "90%";
                 document.getElementById("signUpButton").style['margin'] = "0 10%"; 
                 document.getElementById("signUpButton").style['background-color'] = "white"; 
                 document.getElementById("signUpButton").style['color'] = "#ff8800";
