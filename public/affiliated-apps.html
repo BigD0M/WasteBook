@@ -4,20 +4,27 @@
         <title>WasteBook</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        
         <!-- Bootstrap + CSS -->
-        <script src="script/jquery.min.js"></script>
-        <script src="script/bootstrap.min.js">
-        </script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="styles/WasteBook.css" type="text/css" />
         <link rel="stylesheet" href="styles/aff-apps.css" type="text/css" />
-        <script src="script/profilePage.js"></script>
+        <link rel="stylesheet" href="styles/signIn.css" type="text/css" />
+        <link rel="stylesheet" href="styles/modalBox.css" type="text/css" />
+        
+        <!-- JS -->
+        <script src="script/jquery.min.js"></script>
+        <script src="script/bootstrap.min.js"></script>
+        <script src="script/modal.js"></script>
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+        
         <!-- Firebase -->
         <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
         <script src="script/firebaseStart.js"></script>
-        <script src="https://apis.google.com/js/platform.js" async defer></script>
+        <script src="https://cdn.firebase.com/libs/firebaseui/1.0.1/firebaseui.js"></script>
+        <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/1.0.1/firebaseui.css" />
         <script src="script/signout.js"></script>
-        <script src="script/database.js"></script>
+        <script src="script/signin.js"></script>
     </head>
     <body>
         <header>
@@ -30,16 +37,52 @@
                     </div>
                     <div class="collapse navbar-collapse navbar-menubuilder">
                         <ul class="nav navbar-nav navbar-left">
-                            <li><a class="signOut">Sign out</a></li>
-                            <li><a href="index.html">Change Password</a></li>
+                            <li><a href="/index.html">Home</a></li>
                             <li><a href="affiliated-apps.html">Affiliated Apps</a></li>
+                            <li><a class='signOut'>Sign out</a></li>
+                            <li><a id='signIn'>Sign in</a></li>
                             <li><a href="contact.html">Contact Us</a></li>
+                            <script>
+
+
+                            var user =  new Promise(function(resolve, reject) {
+                                firebase.auth().onAuthStateChanged(function (user) {
+                                    resolve(user !== null);
+                                });
+                            });
+
+                            user.then(function(status) {
+
+                                if (status) {
+                                  $("#signIn").hide();
+                                  $(".signOut").show();
+                                } else {
+                                    console.log("logged out");
+                                  $(".signOut").hide();
+                                  $("#signIn").show();
+                                }
+                            });
+
+                        </script>
                         </ul>
                     </div>
                 </div>
             </div>
         </header>
         <h1 id="title">Affiliated Apps</h1>
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">&times;</span>
+                </div>
+                <div class="login-options">
+                    <p>Sign into WasteBook</p>
+                    <div class="input" id="firebaseui-auth-container"></div>
+                </div>
+            </div>
+        </div>
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
@@ -83,7 +126,7 @@
             </div>
             <div class="row">
                 <div class="col-sm-6">
-                    <img src="images/ipicky_temp.png" class="aff-apps"/>
+                    <img class="aff-apps" alt="iPicky Logo"/>
                 </div>
                 <div class="col-sm-5">
                     <h3 style="margin-top: 15%;">iPicky</h3>
