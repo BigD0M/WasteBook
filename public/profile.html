@@ -60,7 +60,18 @@
                         <img src="images/trash.png" alt="trash"/>
                     </div>
                     <div class="waste-container" style="display: none">
-                        <button type="button" class="btn btn-primary waste-btn" onclick="openWasteForm()">Add Waste</button>
+                        <div class="row container-fluid">
+                            <div class="col-sm-4">
+                                <input class="form-control" type="date" name="date" onchange="updateDate();">
+                            </div>
+                            <div class="col-sm-4">
+                                <button class="btn button btn-primary" onclick="openWasteForm()">Add Waste</button>
+                            </div>
+                            <div class="col-sm-4">
+                                <button class="btn button btn-danger">Remove</button>
+                            </div>
+                        </div>
+                        
                         <div class="waste-form form-group">
                             <div class="col-sm-2">
                                 <input class="form-control" type="text" name="food" placeholder="food">
@@ -80,13 +91,13 @@
                                     <option value="Over Bought">Over Bought</option>
                                     <option value="Over Cooked">Over Cooked</option>
                                     <option value="Other">Other</option>
-                                  </select>
+                                </select>
                             </div>
                             <div class="col-sm-2">
                                 <input class="form-control" type="text" name="brand" placeholder="brand(optional)">
                             </div>
                             <div class="col-sm-2">
-                                <input type="submit" class="btn btn-danger" onclick="addWaste()">
+                                <input type="submit" class="btn btn-success" onclick="addWaste()">
                             </div>
                         </div>
                         <table class="table table-striped">
