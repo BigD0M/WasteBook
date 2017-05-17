@@ -132,7 +132,7 @@ function addWaste() {
 function updateDate() {
     date = $('input[name=date]').val();
     
-    updateLog('users/' + currUser.uid + '/waste/', date);
+    updateLog('users/' + currUser.uid + '/waste', date);
 }
 
 //updates the user's log
@@ -146,6 +146,7 @@ function updateLog(path, date) {
         snapshot.forEach(function(childSnapshot) {
             if (childSnapshot.val().date == date) {
                 $("<tr>" + 
+                  "<td style='display: none' class='delete'><input id=" + childSnapshot.key + " type='checkbox' name='delete'></td>"  +
                   "<td>" + childSnapshot.val().food + "</td>" +
                   "<td>" + childSnapshot.val().qty + "</td>" +
                   "<td>" + childSnapshot.val().price + "</td>" +
@@ -199,21 +200,55 @@ function reasons() {
     return reasons;
 }
 
-
-function brands() {
-     var ref = firebase.database().ref('users/' + currUser.uid + '/waste');
+function deleteLogs() {
     
-       var reasons = new Promise(function(resolve, reject) {
-        
-        ref.once("value").then(function(snapshot) {
-            var brand1
+    $('input[name=delete]').each(function() {
+        if ($(this).is(":checked")) {
+            var id = $(this).attr("id"); 
             
-            snapshot.forEach(function(childSnapshot) {
-                
+            var data = new Promise(function(resolve, reject) {
+                firebase.database().ref('users/' + currUser.uid + '/waste/' + id).once('value').then(function(snapshot) {
+                    resolve(snapshot);
+                });
             });
             
-        }); 
-    });
+            data.then(function(snapshot) {
+                var qty = snapshot.val().qty;
+                var food = snapshot.val().food;
+                var brand = snapshot.val().brand;
                 
-    
+                firebase.database().ref('users/' + currUser.uid + '/waste/foods').once("value").then(function(snapshot) {
+                    var foodQty = parseFloat(snapshot.child(food).val().qty) - parseFloat(qty);
+
+                    if (foodQty == 0) {
+                        firebase.database().ref('users/' + currUser.uid + '/waste/foods/' + food).remove();
+                    } else {
+                        firebase.database().ref('users/' + currUser.uid + '/waste/foods/' + food).set({
+                            qty: foodQty
+                        });
+                    }
+                }); 
+                
+                firebase.database().ref('users/' + currUser.uid + '/waste/brands').once("value").then(function(snapshot) {
+                    if (brand != "") {
+                        var brandQty = parseFloat(snapshot.child(brand).val().qty) - parseFloat(qty);
+
+                        if (brandQty == 0) {
+                            firebase.database().ref('users/' + currUser.uid + '/waste/brands/' + brand).remove();
+                        } else {
+                            firebase.database().ref('users/' + currUser.uid + '/waste/brands/' + brand).set({
+                                qty: brandQty
+                            });
+                        }
+                    }
+                });
+
+                
+                firebase.database().ref('users/' + currUser.uid + '/waste/' + id).remove();
+                
+                updateLog('users/' + currUser.uid + '/waste', getDate());
+            });
+        }
+    });
 }
+
