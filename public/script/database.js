@@ -69,23 +69,24 @@ function addWaste() {
     
    
     //data for DB
-    var food =  $('input[name=food]').val();
+    var food =  $('input[name=food]').val().toLowerCase();
     var qty =  $('input[name=qty]').val();
     var reason =  $('select[name=reason]').val();
-    var brand =  $('input[name=brand]').val();
+    var brand =  $('input[name=brand]').val().toLowerCase();
     var price =  $('input[name=price]').val();
     var date = getDate();
     if (food != "" && qty != "") {
         
-        //clears input fields
-        $('input[name=food]').val("");
-        $('input[name=qty]').val("");
-        $('input[name=brand]').val("");
-        $('input[name=price]').val("");
+    //clears input fields
+    $('input[name=food]').val("");
+    $('input[name=qty]').val("");
+    $('input[name=brand]').val("");
+    $('input[name=price]').val("");
+    $('input[name=date]').val(date);
 
 
-        //Adds data to DB
-        firebase.database().ref('users/' + currUser.uid + '/waste/').push({
+    //Adds data to DB
+    firebase.database().ref('users/' + currUser.uid + '/waste/').push({
             food: food,
             qty: qty,
             reason: reason,
@@ -94,8 +95,36 @@ function addWaste() {
             date: date
         });
     }
-
-    $('input[name=date]').val(date);
+    
+    //Updates food qty
+    firebase.database().ref('users/' + currUser.uid + '/waste/foods').once("value").then(function(snapshot) {
+        if (snapshot.hasChild(food)) {
+            var foodQty = (parseInt(qty) + parseInt(snapshot.child(food).val().qty))
+            firebase.database().ref('users/' + currUser.uid + '/waste/foods/' + food).set({
+                qty: foodQty
+            });
+        } else {
+            firebase.database().ref('users/' + currUser.uid + '/waste/foods/' + food).set({
+                qty: qty
+            });
+        }
+    }); 
+    
+    if (brand != "") {
+        firebase.database().ref('users/' + currUser.uid + '/waste/brands').once("value").then(function(snapshot) {
+            if (snapshot.hasChild(brand)) {
+                var brandQty = (parseInt(qty) + parseInt(snapshot.child(brand).val().qty))
+                firebase.database().ref('users/' + currUser.uid + '/waste/brands/' + brand).set({
+                    qty: brandQty
+                });
+            } else {
+                firebase.database().ref('users/' + currUser.uid + '/waste/brands/' + brand).set({
+                    qty: qty
+                });
+            }
+        }); 
+    }
+    
     updateLog('users/' + currUser.uid + '/waste/', getDate());
 }
 
@@ -110,8 +139,6 @@ function updateDate() {
 function updateLog(path, date) {
     
     var ref = firebase.database().ref(path);
-    
-    var path = 'users/' + currUser.uid + '/waste';
     
     ref.once("value")
         .then(function(snapshot) {
@@ -130,4 +157,63 @@ function updateLog(path, date) {
         });
             
     }); 
+}
+
+function reasons() {
+    var ref = firebase.database().ref('users/' + currUser.uid + '/waste');
+    
+    var reasons = new Promise(function(resolve, reject) {
+        
+        ref.once("value").then(function(snapshot) {
+            
+                var r1 = 0;
+                var r2 = 0;
+                var r3 = 0;
+                var r4 = 0;
+                var r5 = 0;
+                var r6 = 0;
+            
+            snapshot.forEach(function(childSnapshot) {
+                
+                //console.log("checking child" + childSnapshot.key)
+                
+                if (childSnapshot.val().reason == "Expired") {
+                    r1++;
+                } else if (childSnapshot.val().reason == "Tasted Bad") {
+                    r2++;
+                } else if (childSnapshot.val().reason == "Got Stale") {
+                    r3++;
+                } else if (childSnapshot.val().reason == "Over Bought") {
+                    r4++;
+                } else if (childSnapshot.val().reason == "Over Cooked") {
+                    r5++;
+                } else if (childSnapshot.val().reason == "Other") {
+                    r6++;
+                }
+            });
+            
+            resolve([r1, r2, r3, r4, r5, r6]);
+        }); 
+    });
+
+    return reasons;
+}
+
+
+function brands() {
+     var ref = firebase.database().ref('users/' + currUser.uid + '/waste');
+    
+       var reasons = new Promise(function(resolve, reject) {
+        
+        ref.once("value").then(function(snapshot) {
+            var brand1
+            
+            snapshot.forEach(function(childSnapshot) {
+                
+            });
+            
+        }); 
+    });
+                
+    
 }
