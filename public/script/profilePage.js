@@ -199,3 +199,15 @@ $(window).on("load resize", function () {
 function openWasteForm() {
     $(".waste-form").slideToggle(500);
 }
+
+function openDelete() {
+    $(".delete").slideToggle(500);
+}
+
+function clearDel() {
+    $('input[name=delete]').each(function() {
+        if ($(this).is(":checked")) {
+            $(this).prop('checked', false);
+        }
+    });
+}

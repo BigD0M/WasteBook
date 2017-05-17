@@ -67,7 +67,6 @@
 }
 
 .waste.grey {
-    overflow: auto;
     width: 33% auto;
     background-color: #B4B4B4;
 }
@@ -83,7 +82,6 @@
 }
 
 .waste.green {
-    overflow: auto;
     width: 33% auto;
     background-color: #54BF3D;
 }
@@ -99,7 +97,6 @@
 }
 
 .waste.black {
-    overflow: auto;
     width: 33% auto;
     background-color: #1c1c1c;
 }
@@ -115,7 +112,6 @@
 }
 
 .waste.blue {
-    overflow: auto;
     width: 33% auto;
     background-color: #215791;
 }
@@ -131,7 +127,6 @@
 }
 
 .waste.yellow {
-    overflow: auto;
     width: 33% auto;
     background-color: #ff941a;
 }
@@ -155,12 +150,17 @@
     height: auto;
 }
 
+.carousel-control.left, .carousel-control.right {
+    background-image: none
+}
+
+
 @media only screen and (max-width: 768px) {
     .waste-cover > img, .stats-cover > img, .rank-cover > img {
         width: 9%;
         height: auto;
     }
-    
+
     .waste-cover > p, .stats-cover > p, .rank-cover > p {
         display: inline;
     }
