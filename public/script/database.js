@@ -176,8 +176,6 @@ function reasons() {
             
             snapshot.forEach(function(childSnapshot) {
                 
-                //console.log("checking child" + childSnapshot.key)
-                
                 if (childSnapshot.val().reason == "Expired") {
                     r1++;
                 } else if (childSnapshot.val().reason == "Tasted Bad") {
