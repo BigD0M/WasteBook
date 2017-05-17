@@ -22,6 +22,12 @@
         <script src="https://apis.google.com/js/platform.js" async defer></script>
         <script src="script/signout.js"></script>
         <script src="script/database.js"></script>
+        
+        <!-- Charts -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+        <script src="script/charts.js"></script>
+        
     </head>
     <!-- NavBar -->
     <div id="custom-bootstrap-menu" class="navbar navbar-default " role="navigation">
@@ -54,6 +60,8 @@
     <body>
         <div class="container-fluid options">
             <div class="row"> 
+                
+                <!-- Add Waste Page -->
                 <div class="waste col-sm-4" id="normal">
                     <div class="waste-cover">
                         <p>Add Waste</p>
@@ -68,10 +76,15 @@
                                 <button class="btn button btn-primary" onclick="openWasteForm()">Add Waste</button>
                             </div>
                             <div class="col-sm-4">
-                                <button class="btn button btn-danger" onclick="reasons();">Remove</button>
+                                <button class="btn button btn-danger delete" onclick="openDelete()">Remove</button>
+                            </div>
+                            <div class="col-sm-2">
+                                <button class="btn button btn-danger delete" onclick="openDelete(); deleteLogs();" style='display: none'>Confirm</button>
+                            </div>
+                            <div class="col-sm-2">
+                                <button class="btn button btn-danger delete" onclick="openDelete(); clearDel();" style='display: none'>Cancel</button>
                             </div>
                         </div>
-                        
                         <div class="waste-form form-group">
                             <div class="col-sm-2">
                                 <input class="form-control" type="text" name="food" placeholder="food">
@@ -100,9 +113,10 @@
                                 <input type="submit" class="btn btn-success" onclick="addWaste()">
                             </div>
                         </div>
-                        <table class="table table-striped">
+                        <table class="table-striped table table-condensed">
                             <thead>
                                 <tr>
+                                    <th class="delete" style='display: none'>X</th>
                                     <th>Food</th>
                                     <th>Quantity</th>
                                     <th>Price</th>
@@ -115,12 +129,18 @@
                         </table>
                     </div>
                 </div>
+                
+                <!-- Stats Page -->
                 <div class="stats col-sm-4" id="normal">
-                <div class="stats-cover">
-                    <p>View Stats</p>
-                    <img src="images/stats.png" alt="stats"/>
+                    <div class="stats-cover">
+                        <p>View Stats</p>
+                        <img src="images/stats.png" alt="stats"/>
+                    </div>
+                    <div class="stats-container" style="display: none">
+                        <!-- put graphs here -->
+                    </div>
                 </div>
-                </div>
+                <!-- Rank Page -->
                 <div class="rank col-sm-4" id="normal">
                     <div class="rank-cover">
                         <p>View Rank</p>
