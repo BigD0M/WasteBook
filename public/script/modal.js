@@ -14,6 +14,7 @@ $(document).ready(function() {
     if (btn != null) {
          btn.onclick = function() {
             modal.style.display = "block";
+            $.cookie("signIn", "true", { path: '/', expires: 1});
         }
     }
 
@@ -21,6 +22,7 @@ $(document).ready(function() {
     if (btn2 != null) {
         btn2.onclick = function() {
             modal.style.display = "block";
+            $.cookie("signIn", "true", { path: '/', expires: 1});
         }
     }
 
@@ -28,12 +30,20 @@ $(document).ready(function() {
     // When the user clicks on <span> (x), close the modal
     span.onclick = function() {
         modal.style.display = "none";
+        $.removeCookie("signIn");
     }
 
     // When the user clicks anywhere outside of the modal, close it
     window.onclick = function(event) {
         if (event.target == modal) {
             modal.style.display = "none";
+            $.removeCookie("signIn");
         }
     }
+    
+    if ($.cookie("signIn") == "true") {
+        modal.style.display = "block";
+        $.removeCookie("signIn");
+    }
+    
 });
