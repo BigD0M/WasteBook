@@ -348,3 +348,30 @@ function quantity(){
     
     return quantity;
 }
+                               
+function summoney(){
+    
+    var ref = firebase.database().ref('users/' + currUser.uid + '/waste');
+    var total = new Promise(function(resolve, reject) {
+        ref.once("value").then(function(snapshot) {
+            var sum = 0;
+            snapshot.forEach(function(childSnapshot) {
+                if (!isNaN(parseFloat(childSnapshot.val().price))) {
+                    
+                    sum += (parseFloat(childSnapshot.val().price) *                      parseFloat(childSnapshot.val().qty));
+                }
+            });
+         
+            resolve(sum);
+            
+        }); 
+    });
+    
+    total.then(function(result) {
+        
+        console.log(result);
+    })
+    
+    return total;
+    
+}
