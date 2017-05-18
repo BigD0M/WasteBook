@@ -320,7 +320,7 @@ function deleteLogs() {
     });
 }
 
-function quantity(){ 
+function quantity() { 
     
     var ref = firebase.database().ref('users/' + currUser.uid + '/waste/foods');
     
@@ -340,11 +340,6 @@ function quantity(){
 
             }); 
         });
-
-        quantity.then(function(result) {
-
-            console.log(result);
-        })
     });
     
     
@@ -363,7 +358,7 @@ function summoney(){
                     sum += (parseFloat(childSnapshot.val().price) * parseFloat(childSnapshot.val().qty));
                 }
             });
-         
+            
             resolve(sum);
             
         }); 
