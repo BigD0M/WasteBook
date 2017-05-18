@@ -221,35 +221,31 @@ function brands() {
             var count = 0; /* Used to increment the brand index  */
             
             snapshot.forEach(function(childSnapshot) {
-                if (count < 5) { /* This if fills the 5 topBrands first */
-                    topBrands[count] = [childSnapshot.key, parseFloat(childSnapshot.val().qty)];
-                    count++;
-                } else {
-                    var bNo = 0; /* Used for the brand index */
-                    var checked = false;
-                    
-                    /* loop through the topBrands */
-                    topBrands.forEach(function(topBrand){
-                        if (!checked) {
-                            
-                            /* if this brand has qty more than the current we replace */
-                            if (topBrand[1] < parseFloat(childSnapshot.val().qty)) {
+                var bNo = 0; /* Used for the brand index */
+                var checked = false;
 
-                                /* first we have staggers each brand down one placement */
-                                for (var i = 4; i > bNo; i--) {
-                                    topBrands[i] = topBrands[i - 1];
-                                }
+                /* loop through the topBrands */
+                topBrands.forEach(function(topBrand){
+                    if (!checked) {
 
-                                    
-                                /* replace the brand */
-                                topBrands[bNo] = [childSnapshot.key, parseFloat(childSnapshot.val().qty)];
+                        /* if this brand has qty more than the current we replace */
+                        if (topBrand[1] < parseFloat(childSnapshot.val().qty)) {
 
-                                checked = true; /* no need to replace the brand for this loop*/
+                            /* first we have staggers each brand down one placement */
+                            for (var i = 4; i > bNo; i--) {
+                                topBrands[i] = topBrands[i - 1];
                             }
+
+
+                            /* replace the brand */
+                            topBrands[bNo] = [childSnapshot.key, parseFloat(childSnapshot.val().qty)];
+
+                            checked = true; /* no need to replace the brand for this loop*/
                         }
-                        bNo++; /* increments if no brand was replaced */
-                    });
-                }
+                    }
+                    bNo++; /* increments if no brand was replaced */
+                });
+                
             });
             
             /* Put each brand, highest -> lowest, in the resolve */
@@ -320,30 +316,56 @@ function deleteLogs() {
     });
 }
 
-function quantity() { 
+function topFoods() {
     
     var ref = firebase.database().ref('users/' + currUser.uid + '/waste/foods');
     
-    var quantity = new Promise(function(resolve, reject) {
+    /* Our promise object */
+    var foods = new Promise(function(resolve, reject) {
+        
         ref.once("value").then(function(snapshot) {
             
-            var i = 0;
-            var array = [];
-            array[i] = [0, "none"];
-
+            var topFoods = []; 
+            
+            topFoods[0] = ["None", 0];
+            topFoods[1] = ["None", 0];
+            topFoods[2] = ["None", 0];
+            topFoods[3] = ["None", 0];
+            topFoods[4] = ["None", 0];
+            
+            var count = 0; 
+            
             snapshot.forEach(function(childSnapshot) {
-                array[i] = [childSnapshot.val().qty, childSnapshot.key];
-                i++;
-                array.sort(function(a, b){return b[0]-a[0]});
+                var fNo = 0; 
+                var checked = false;
 
-                resolve([array[0], array[1], array[2], array[3], array[4]]);
+                topFoods.forEach(function(topFood){
+                    if (!checked) {
 
-            }); 
-        });
+                        if (topFood[1] < parseFloat(childSnapshot.val().qty)) {
+
+
+                            console.log(parseFloat(childSnapshot.val().qty));
+
+                            for (var i = 4; i > fNo; i--) {
+                                topFoods[i] = topFoods[i - 1];
+                            }
+
+
+                            topFoods[fNo] = [childSnapshot.key, parseFloat(childSnapshot.val().qty)];
+
+                            checked = true; 
+                        }
+                    }
+                    fNo++; 
+                });
+            });
+            
+            resolve([topFoods[0], topFoods[1], topFoods[2], topFoods[3], topFoods[4]]);
+        }); 
     });
-    
-    
-    return quantity;
+
+    return foods;
 }
                                
 function summoney(){
