@@ -320,3 +320,31 @@ function deleteLogs() {
     });
 }
 
+function quantity(){ 
+    
+    var ref = firebase.database().ref('users/' + currUser.uid + '/waste/foods');
+    
+    var quantity = new Promise(function(resolve, reject) {
+        ref.once("value").then(function(snapshot) {
+            
+            var i = 0;
+            var array = [];
+            array[i] = [0, "none"];
+
+            snapshot.forEach(function(childSnapshot) {
+                array[i] = [childSnapshot.val().qty, childSnapshot.key];
+                i++;
+                array.sort(function(a, b){return b[0]-a[0]});
+
+                resolve([array[0], array[1], array[2], array[3], array[4]]);
+
+        }); 
+    });
+    
+    quantity.then(function(result) {
+        
+        console.log(result);
+    })
+    
+    return quantity;
+}
