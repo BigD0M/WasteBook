@@ -17,6 +17,7 @@
         <script src="script/bootstrap.min.js"></script>
         <script src="script/modal.js"></script>
         <script src="https://apis.google.com/js/platform.js" async defer></script>
+        <script src="script/jquery.cookie.js"></script>
         
         <!-- Firebase -->
         <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
@@ -57,7 +58,6 @@
                                   $("#signIn").hide();
                                   $(".signOut").show();
                                 } else {
-                                    console.log("logged out");
                                   $(".signOut").hide();
                                   $("#signIn").show();
                                 }
