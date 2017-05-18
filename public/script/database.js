@@ -262,6 +262,8 @@ function brands() {
 
 function deleteLogs() {
     
+    var counter = 1;
+    
     $('input[name=delete]').each(function() {
         if ($(this).is(":checked")) {
             var id = $(this).attr("id"); 
@@ -277,36 +279,42 @@ function deleteLogs() {
                 var food = snapshot.val().food;
                 var brand = snapshot.val().brand;
                 
-                firebase.database().ref('users/' + currUser.uid + '/waste/foods').once("value").then(function(snapshot) {
-                    var foodQty = parseFloat(snapshot.child(food).val().qty) - parseFloat(qty);
+                setTimeout(function(){ 
+                    firebase.database().ref('users/' + currUser.uid + '/waste/foods').once("value").then(function(snapshot) {
 
-                    if (foodQty == 0) {
-                        firebase.database().ref('users/' + currUser.uid + '/waste/foods/' + food).remove();
-                    } else {
-                        firebase.database().ref('users/' + currUser.uid + '/waste/foods/' + food).set({
-                            qty: foodQty
-                        });
-                    }
-                }); 
-                
-                firebase.database().ref('users/' + currUser.uid + '/waste/brands').once("value").then(function(snapshot) {
-                    if (brand != "") {
-                        var brandQty = parseFloat(snapshot.child(brand).val().qty) - parseFloat(qty);
+                        var foodQty = parseFloat(snapshot.child(food).val().qty) - parseFloat(qty);
 
-                        if (brandQty == 0) {
-                            firebase.database().ref('users/' + currUser.uid + '/waste/brands/' + brand).remove();
+                        if (foodQty == 0) {
+                            firebase.database().ref('users/' + currUser.uid + '/waste/foods/' + food).remove();
                         } else {
-                            firebase.database().ref('users/' + currUser.uid + '/waste/brands/' + brand).set({
-                                qty: brandQty
+                            firebase.database().ref('users/' + currUser.uid + '/waste/foods/' + food).set({
+                                qty: foodQty
                             });
                         }
-                    }
-                });
+                    }); 
+                
+                    firebase.database().ref('users/' + currUser.uid + '/waste/brands').once("value").then(function(snapshot) {
+                        if (brand != "") {
+                            var brandQty = parseFloat(snapshot.child(brand).val().qty) - parseFloat(qty);
 
+                            if (brandQty == 0) {
+                                firebase.database().ref('users/' + currUser.uid + '/waste/brands/' + brand).remove();
+                            } else {
+                                firebase.database().ref('users/' + currUser.uid + '/waste/brands/' + brand).set({
+                                    qty: brandQty
+                                });
+                            }
+                        }
+                    });
+
+
+                    firebase.database().ref('users/' + currUser.uid + '/waste/' + id).remove();
+
+                    updateLog('users/' + currUser.uid + '/waste', getDate());
                 
-                firebase.database().ref('users/' + currUser.uid + '/waste/' + id).remove();
+                }, counter * 100);
                 
-                updateLog('users/' + currUser.uid + '/waste', getDate());
+                counter++;
             });
         }
     });

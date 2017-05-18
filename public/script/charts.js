@@ -1,5 +1,4 @@
-$(document).ready(function() {
-    
+firebase.auth().onAuthStateChanged(function(user) {
     //Reasons chart
     var reasonCTX = document.getElementById("reasonChart");
     var reason = reasons();
@@ -84,6 +83,4 @@ $(document).ready(function() {
             }
         });
     });
-    
-    
 });
