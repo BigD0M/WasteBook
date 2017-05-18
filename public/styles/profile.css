@@ -154,6 +154,13 @@
     background-image: none
 }
 
+.chart {
+    margin: 2.5%;
+    max-width: 45%;
+    background-color: white;
+    box-shadow: 2px 2px RGBA(0, 0, 0, 0.1);
+}
+
 
 @media only screen and (max-width: 768px) {
     .waste-cover > img, .stats-cover > img, .rank-cover > img {
@@ -163,5 +170,13 @@
 
     .waste-cover > p, .stats-cover > p, .rank-cover > p {
         display: inline;
+    }
+    
+    .chart {
+        margin: 2.5%;
+        max-width: 95%;
+        max-height: 50%;
+        background-color: white;
+        box-shadow: 2px 2px RGBA(0, 0, 0, 0.1);
     }
 }
