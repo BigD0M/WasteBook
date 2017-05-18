@@ -338,13 +338,15 @@ function quantity(){
 
                 resolve([array[0], array[1], array[2], array[3], array[4]]);
 
-        }); 
+            }); 
+        });
+
+        quantity.then(function(result) {
+
+            console.log(result);
+        })
     });
     
-    quantity.then(function(result) {
-        
-        console.log(result);
-    })
     
     return quantity;
 }
@@ -358,7 +360,7 @@ function summoney(){
             snapshot.forEach(function(childSnapshot) {
                 if (!isNaN(parseFloat(childSnapshot.val().price))) {
                     
-                    sum += (parseFloat(childSnapshot.val().price) *                      parseFloat(childSnapshot.val().qty));
+                    sum += (parseFloat(childSnapshot.val().price) * parseFloat(childSnapshot.val().qty));
                 }
             });
          
@@ -366,11 +368,6 @@ function summoney(){
             
         }); 
     });
-    
-    total.then(function(result) {
-        
-        console.log(result);
-    })
     
     return total;
     
