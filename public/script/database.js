@@ -198,6 +198,68 @@ function reasons() {
     return reasons;
 }
 
+function brands() {
+    
+    /* The directory to brands */
+    var ref = firebase.database().ref('users/' + currUser.uid + '/waste/brands');
+    
+    /* Our promise object */
+    var brands = new Promise(function(resolve, reject) {
+        
+        ref.once("value").then(function(snapshot) {
+            
+            var topBrands = []; /* The array that stores the top brands */
+            
+            /* instantiate first so we have no nulls */
+            /* first input is the brand name, which is also the child key, second input is the qty */
+            topBrands[0] = ["None", 0];
+            topBrands[1] = ["None", 0];
+            topBrands[2] = ["None", 0];
+            topBrands[3] = ["None", 0];
+            topBrands[4] = ["None", 0];
+            
+            var count = 0; /* Used to increment the brand index  */
+            
+            snapshot.forEach(function(childSnapshot) {
+                if (count < 5) { /* This if fills the 5 topBrands first */
+                    topBrands[count] = [childSnapshot.key, parseFloat(childSnapshot.val().qty)];
+                    count++;
+                } else {
+                    var bNo = 0; /* Used for the brand index */
+                    var checked = false;
+                    
+                    /* loop through the topBrands */
+                    topBrands.forEach(function(topBrand){
+                        if (!checked) {
+                            
+                            /* if this brand has qty more than the current we replace */
+                            if (topBrand[1] < parseFloat(childSnapshot.val().qty)) {
+
+                                /* first we have staggers each brand down one placement */
+                                for (var i = 4; i > bNo; i--) {
+                                    topBrands[i] = topBrands[i - 1];
+                                }
+
+                                    
+                                /* replace the brand */
+                                topBrands[bNo] = [childSnapshot.key, parseFloat(childSnapshot.val().qty)];
+
+                                checked = true; /* no need to replace the brand for this loop*/
+                            }
+                        }
+                        bNo++; /* increments if no brand was replaced */
+                    });
+                }
+            });
+            
+            /* Put each brand, highest -> lowest, in the resolve */
+            resolve([topBrands[0], topBrands[1], topBrands[2], topBrands[3], topBrands[4]]);
+        }); 
+    });
+
+    return brands;
+}
+
 function deleteLogs() {
     
     $('input[name=delete]').each(function() {
