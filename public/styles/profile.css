@@ -150,10 +150,6 @@
     height: auto;
 }
 
-.carousel-control.left, .carousel-control.right {
-    background-image: none
-}
-
 .chart {
     margin: 2.5%;
     max-width: 45%;
