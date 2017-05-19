@@ -150,6 +150,9 @@ window.onload = function () {
                     document.addEventListener("keydown", keyDownHandler, false);
                     document.addEventListener("keyup", keyUpHandler, false);
                     document.addEventListener("mousemove", mouseMoveHandler, false);
+                    $(document).on('touchstart', '#myCanvas', function (e) {
+                        paddleX = e.originalEvent.touches[0].pageX;
+                    });
 
                     // When the user presses the left/right key down
                     function keyDownHandler(e) {
