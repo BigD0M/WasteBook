@@ -67,6 +67,10 @@ function getDate() {
 //adds user waste from add waste form 
 function addWaste() {
     
+    if ($("#delete-active").length) {
+        clearDel();
+    }
+    
    
     //data for DB
     var food =  $('input[name=food]').val().toLowerCase();
@@ -130,6 +134,10 @@ function addWaste() {
 
 //updates the log veiwing date
 function updateDate() {
+    if ($("#delete-active").length) {
+        clearDel();
+    }
+    
     date = $('input[name=date]').val();
     
     updateLog('users/' + currUser.uid + '/waste', date);
@@ -146,7 +154,7 @@ function updateLog(path, date) {
         snapshot.forEach(function(childSnapshot) {
             if (childSnapshot.val().date == date) {
                 $("<tr>" + 
-                  "<td style='display: none' class='delete'><input id=" + childSnapshot.key + " type='checkbox' name='delete'></td>"  +
+                  "<td style='display: none' id='delete-hidden' class='delete'><input id=" + childSnapshot.key + " type='checkbox' name='delete'></td>"  +
                   "<td>" + childSnapshot.val().food + "</td>" +
                   "<td>" + childSnapshot.val().qty + "</td>" +
                   "<td>" + childSnapshot.val().price + "</td>" +
@@ -343,9 +351,6 @@ function topFoods() {
                     if (!checked) {
 
                         if (topFood[1] < parseFloat(childSnapshot.val().qty)) {
-
-
-                            console.log(parseFloat(childSnapshot.val().qty));
 
                             for (var i = 4; i > fNo; i--) {
                                 topFoods[i] = topFoods[i - 1];

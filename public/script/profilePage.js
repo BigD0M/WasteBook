@@ -202,6 +202,8 @@ function openWasteForm() {
 
 function openDelete() {
     $(".delete").slideToggle(500);
+    
+    $("#delete-hidden").attr("id", "delete-active");
 }
 
 function clearDel() {
@@ -210,6 +212,9 @@ function clearDel() {
             $(this).prop('checked', false);
         }
     });
+    
+    $(".delete").slideToggle(500);
+    $("#delete-active").attr("id", "delete-hidden");
 }
 
 //Validates number inputs
