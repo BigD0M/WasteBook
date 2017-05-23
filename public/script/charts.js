@@ -37,6 +37,7 @@ firebase.auth().onAuthStateChanged(function(user) {
                  }
              }
         });
+        
         $(".stats").click(function () {
             reason = reasons();
             reason.then(function (info) {
@@ -99,6 +100,7 @@ firebase.auth().onAuthStateChanged(function(user) {
                 }
             }
         });
+        
         $(".stats").click(function () {
             brand = brands();
             brand.then(function (info) {
@@ -118,6 +120,7 @@ firebase.auth().onAuthStateChanged(function(user) {
             brandChart.update();
         });
     });
+    
     //Food chart
     var foodCTX = $('#foodChart');
     var food = topFoods();
@@ -166,6 +169,7 @@ firebase.auth().onAuthStateChanged(function(user) {
                 }
             }
         });
+        
         $(".stats").click(function () {
             food = topFoods();
             food.then(function (info) {
@@ -175,7 +179,7 @@ firebase.auth().onAuthStateChanged(function(user) {
                 foodChart.data.datasets[0].data[3] = info[3][1];
                 foodChart.data.datasets[0].data[4] = info[4][1];
             });
-            brand.then(function (info) {
+            food.then(function (info) {
                 foodChart.data.labels[0] = info[0][0];
                 foodChart.data.labels[1] = info[1][0];
                 foodChart.data.labels[2] = info[2][0];
@@ -187,9 +191,13 @@ firebase.auth().onAuthStateChanged(function(user) {
     });
 
     $(".stats").click(function () {
+        
         var canvas = document.getElementById("myCanvas");
         var ctx = canvas.getContext("2d");
         var total = summoney();
+        
+        
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
 
         total.then(function (info) {
             ctx.font = "50px Arial";
