@@ -1,29 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
     <head>
-        <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
+        <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
         <title>WasteBook</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta charset="utf-8" />
-        
+
         <!-- Styles -->
-        
-        <link rel="stylesheet" href="styles/bootstrap.min.css" type="text/css"/>
+
+        <link rel="stylesheet" href="styles/bootstrap.min.css" type="text/css" />
         <link rel="stylesheet" href="styles/WasteBook.css" type="text/css" />
         <link rel="stylesheet" href="styles/homePage.css" type="text/css" />
         <link rel="stylesheet" href="styles/signIn.css" type="text/css" />
         <link rel="stylesheet" href="styles/modalBox.css" type="text/css" />
-        
+
         <!-- Javascript -->
-        
+
         <script src="script/jquery.min.js"></script>
         <script src="script/bootstrap.min.js"></script>
         <script src="script/modal.js"></script>
         <script src="script/jquery.cookie.js"></script>
         <script src="script/changeHomePageToMobile.js"></script>
-        
+        <script src="script/homePage.js"></script>
+
         <!-- Firebase -->
-        
+
         <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
         <script src="script/firebaseStart.js"></script>
         <script src="https://cdn.firebase.com/libs/firebaseui/1.0.1/firebaseui.js"></script>
@@ -31,9 +33,9 @@
         <script src="https://apis.google.com/js/platform.js" async defer></script>
         <script src="script/signin.js"></script>
         <script src="script/redirect.js"></script>
-        
+
     </head>
-    
+
     <!-- NavBar -->
     <section id="top"></section>
     <div id="custom-bootstrap-menu" class="navbar navbar-default " role="navigation">
@@ -55,8 +57,9 @@
             </div>
         </div>
     </div>
+
     <body>
-         <!-- The Modal -->
+        <!-- The Modal -->
         <div id="myModal" class="modal">
             <!-- Modal content -->
             <div class="modal-content">
@@ -69,7 +72,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div id="Hook" class="imageBlock">
             <span>
                 <p class="imageText imageBlockHeading">WAS THE LAST TIME YOU <br>THREW AWAY FOOD AVOIDABLE?</p>
@@ -83,11 +86,11 @@
                 <p class="textBlockText">
                     Food waste is the act of throwing away food that can still be used. An innocent mistake everyone is guilty of from time to time. But what people usually don't consider is the consequences caused by food waste. They don't consider, the money they're spending, the space being taken up in their fridge/pantry, how it attracts bugs and wild animals, the amount of methane (a greenhouse gas) being released into the atmosphere, among other consequences.
                 </p>
-                
+
                 <p class="textBlockText">
-                     Now this and a lot more can be avoided if we as a people decided to make slight changes in our behaviour. Even something as small as not throwing away food just because it's past the "Best Before" date can make a huge difference. Sidenote: the "Best Before" date is simply a guess from the provider of when they think the food will be most fresh, it has no bearing on when the food is no longer edible. But for some reason, people aware of this issue still choose not to act. And people have tried to make it as easy as possible, with apps that give you recipes for aged food, that tell you when stores are throwing away food that they're willing to give you for a big discount, or allows you to <b>record the amount of food you throw away for self-awareness</b>.
+                    Now this and a lot more can be avoided if we as a people decided to make slight changes in our behaviour. Even something as small as not throwing away food just because it's past the "Best Before" date can make a huge difference. Sidenote: the "Best Before" date is simply a guess from the provider of when they think the food will be most fresh, it has no bearing on when the food is no longer edible. But for some reason, people aware of this issue still choose not to act. And people have tried to make it as easy as possible, with apps that give you recipes for aged food, that tell you when stores are throwing away food that they're willing to give you for a big discount, or allows you to <b>record the amount of food you throw away for self-awareness</b>.
                 </p>
-                
+
                 <p class="textBlockText">
                     The common reasons for this appear to be that people don't feel as though they're making a difference, they find it to be a hassle, or they simply don't think they're contributing much to the problem, therefore, don't need to do anything, to begin with.
                 </p>
@@ -114,7 +117,7 @@
                 <p class="textBlockText">
                     WasteBook is a web application that allows you to input the amount of food you waste, the reason why,  the amount your threw away, and other optional info. Once it gets the info it will provide you with a score and then compare your score with other users with all sorts of different demographics and give you a rank. It will also keep track of your common reasons and waste items and based on those patterns, it will recommend other apps that will help you most.
                 </p>
-                
+
                 <p class="textBlockText">
                     So what makes this different from any other food waste diary app? Well of course there's the rank feature that takes our product past awareness and productivity and introduces a competitive environment where everyone is basically trying to reach the top percentages. Aside from that, our app also recommends apps based on the user's behaviour rather than trying to promote random apps simply waiting to see what sticks.
                 </p>
@@ -130,8 +133,9 @@
                 <p id="signUpButton">SIGN UP</p>
             </span>
             <section id="backToTopButton" class="demo">
-	           <a href="#top"><span></span><span></span><span></span></a>
+                <a href="#top"><span></span><span></span><span></span></a>
             </section>
         </div>
     </body>
+
 </html>
