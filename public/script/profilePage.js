@@ -202,6 +202,8 @@ function openWasteForm() {
 
 function openDelete() {
     $(".delete").slideToggle(500);
+    
+    $("#delete-hidden").attr("id", "delete-active");
 }
 
 function clearDel() {
@@ -210,24 +212,31 @@ function clearDel() {
             $(this).prop('checked', false);
         }
     });
+    
+    $(".delete").slideToggle(500);
+    $("#delete-active").attr("id", "delete-hidden");
 }
 
 //Validates number inputs
 $(document).ready(function() {
+    
     $('input[name=price]').keydown(function(e) {
         if(!((e.keyCode > 95 && e.keyCode < 106)
           || (e.keyCode > 47 && e.keyCode < 58) 
-          || e.keyCode == 8)) {
+          || e.keyCode == 8
+          || ($('input[name=price]').val().indexOf(".") < 0 && e.keyCode == 110))) {
             return false;
         }
     });
-
+    
     $('input[name=qty]').keydown(function(e) {
         if(!((e.keyCode > 95 && e.keyCode < 106)
           || (e.keyCode > 47 && e.keyCode < 58) 
-          || e.keyCode == 8)) {
+          || e.keyCode == 8
+          || ($('input[name=price]').val().indexOf(".") < 0 && e.keyCode == 110))) {
             return false;
         }
     });
+    
 
 });

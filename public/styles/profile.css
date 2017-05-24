@@ -18,19 +18,19 @@
 
 .waste {
     width: 33% auto;
-    background-color: #ff941a;
+    background-color: #ff8800;
     border: 1px solid white;
 }
 
 .stats {
     width: 33% auto;
-    background-color: #ff941a;
+    background-color: #ff8800;
     border: 1px solid white;
 }
 
 .rank {
     width: 34% auto;
-    background-color: #ff941a;
+    background-color: #ff8800;
     border: 1px solid white;
 }
 
@@ -128,17 +128,17 @@
 
 .waste.yellow {
     width: 33% auto;
-    background-color: #ff941a;
+    background-color: #ff8800;
 }
 
 .stats.yellow {
     width: 33% auto;
-    background-color: #ff941a;
+    background-color: #ff8800;
 }
 
 .rank.yellow {
     width: 34% auto;
-    background-color: #ff941a;
+    background-color: #ff8800;
 }
 
 .waste-cover, .stats-cover, .rank-cover {
@@ -157,6 +157,14 @@
     box-shadow: 2px 2px RGBA(0, 0, 0, 0.1);
 }
 
+.rankHolder {
+    text-align: center;
+    background-color: white;
+    box-shadow: 2px 2px RGBA(0, 0, 0, 0.1);
+    width: 95%;
+    margin: 2.5%;
+    
+}
 
 @media only screen and (max-width: 768px) {
     .waste-cover > img, .stats-cover > img, .rank-cover > img {

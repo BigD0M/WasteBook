@@ -19,15 +19,20 @@ firebase.auth().onAuthStateChanged(function(user) {
 
 //Writes the user data to the firebase database
 function writeUserData(userId, name, email) {
+    var date = getDate();
+    
     firebase.database().ref('users/' + userId).set({
         username: name,
-        email: email
+        email: email,
+        startDate: date
     });
     
 }
 
 //checks if the current user exists, if not one is created
 function checkForUser() {
+    
+    
     var ref = firebase.database().ref('users/');
     var exists = new Promise(function(resolve, reject) {
         ref.once("value").then(function(snapshot) {
@@ -67,6 +72,10 @@ function getDate() {
 //adds user waste from add waste form 
 function addWaste() {
     
+    if ($("#delete-active").length) {
+        clearDel();
+    }
+    
    
     //data for DB
     var food =  $('input[name=food]').val().toLowerCase();
@@ -75,8 +84,8 @@ function addWaste() {
     var brand =  $('input[name=brand]').val().toLowerCase();
     var price =  $('input[name=price]').val();
     var date = getDate();
-    if (food != "" && qty != "") {
-        
+    var points = 0;
+    
     //clears input fields
     $('input[name=food]').val("");
     $('input[name=qty]').val("");
@@ -84,45 +93,73 @@ function addWaste() {
     $('input[name=price]').val("");
     $('input[name=date]').val(date);
 
+    if (food != "" && qty != "") {
 
-    //Adds data to DB
-    firebase.database().ref('users/' + currUser.uid + '/waste/').push({
-            food: food,
-            qty: qty,
-            reason: reason,
-            brand: brand,
-            price: price,
-            date: date
+        //Adds data to DB
+        firebase.database().ref('users/' + currUser.uid + '/waste/').push({
+                food: food,
+                qty: qty,
+                reason: reason,
+                brand: brand,
+                price: price,
+                date: date
         });
-    }
-    
-    //Updates food qty
-    firebase.database().ref('users/' + currUser.uid + '/waste/foods').once("value").then(function(snapshot) {
-        if (snapshot.hasChild(food)) {
-            var foodQty = (parseInt(qty) + parseInt(snapshot.child(food).val().qty))
-            firebase.database().ref('users/' + currUser.uid + '/waste/foods/' + food).set({
-                qty: foodQty
+        
+        firebase.database().ref('users/' + currUser.uid + '/ranking/').once("value").then(function(snapshot) {
+           
+            var points = 0;
+            
+            var weeks = getWeeks();
+
+            if (qty < 0) {
+                points = 1;
+            } else {
+                points = 2 * qty;
+            }
+            
+            if (snapshot.val() != null) {
+                points = parseFloat(snapshot.val().points) + points;
+            }
+            
+            weeks.then(function(weeks) {
+                if (weeks > 0) {
+                    points /= weeks;
+                }
+                
+                firebase.database().ref('users/' + currUser.uid + '/ranking/').set({
+                    points: points
+                });
             });
-        } else {
-            firebase.database().ref('users/' + currUser.uid + '/waste/foods/' + food).set({
-                qty: qty
-            });
-        }
-    }); 
-    
-    if (brand != "") {
-        firebase.database().ref('users/' + currUser.uid + '/waste/brands').once("value").then(function(snapshot) {
-            if (snapshot.hasChild(brand)) {
-                var brandQty = (parseInt(qty) + parseInt(snapshot.child(brand).val().qty))
-                firebase.database().ref('users/' + currUser.uid + '/waste/brands/' + brand).set({
-                    qty: brandQty
+        }); 
+
+        //Updates food qty
+        firebase.database().ref('users/' + currUser.uid + '/waste/foods').once("value").then(function(snapshot) {
+            if (snapshot.hasChild(food)) {
+                var foodQty = (parseFloat(qty) + parseFloat(snapshot.child(food).val().qty))
+                firebase.database().ref('users/' + currUser.uid + '/waste/foods/' + food).set({
+                    qty: foodQty
                 });
             } else {
-                firebase.database().ref('users/' + currUser.uid + '/waste/brands/' + brand).set({
+                firebase.database().ref('users/' + currUser.uid + '/waste/foods/' + food).set({
                     qty: qty
                 });
             }
         }); 
+
+        if (brand != "") {
+            firebase.database().ref('users/' + currUser.uid + '/waste/brands').once("value").then(function(snapshot) {
+                if (snapshot.hasChild(brand)) {
+                    var brandQty = (parseFloat(qty) + parseFloat(snapshot.child(brand).val().qty))
+                    firebase.database().ref('users/' + currUser.uid + '/waste/brands/' + brand).set({
+                        qty: brandQty
+                    });
+                } else {
+                    firebase.database().ref('users/' + currUser.uid + '/waste/brands/' + brand).set({
+                        qty: qty
+                    });
+                }
+            }); 
+        }
     }
     
     updateLog('users/' + currUser.uid + '/waste/', getDate());
@@ -130,6 +167,10 @@ function addWaste() {
 
 //updates the log veiwing date
 function updateDate() {
+    if ($("#delete-active").length) {
+        clearDel();
+    }
+    
     date = $('input[name=date]').val();
     
     updateLog('users/' + currUser.uid + '/waste', date);
@@ -146,7 +187,7 @@ function updateLog(path, date) {
         snapshot.forEach(function(childSnapshot) {
             if (childSnapshot.val().date == date) {
                 $("<tr>" + 
-                  "<td style='display: none' class='delete'><input id=" + childSnapshot.key + " type='checkbox' name='delete'></td>"  +
+                  "<td style='display: none' id='delete-hidden' class='delete'><input id=" + childSnapshot.key + " type='checkbox' name='delete'></td>"  +
                   "<td>" + childSnapshot.val().food + "</td>" +
                   "<td>" + childSnapshot.val().qty + "</td>" +
                   "<td>" + childSnapshot.val().price + "</td>" +
@@ -288,6 +329,35 @@ function deleteLogs() {
                             });
                         }
                     }); 
+                    
+                    firebase.database().ref('users/' + currUser.uid + '/ranking/').once("value").then(function(snapshot) {
+           
+                        var points = 0;
+
+                        var weeks = getWeeks();
+                        
+                        if (qty < 0) {
+                            points = 1;
+                        } else {
+                            points = 2 * qty;
+                        }
+
+                        weeks.then(function(weeks) {
+                        
+                            if (weeks > 0) {
+                                points /= weeks;
+                            }
+                            
+                            if (snapshot.val() != null) {
+                                points = parseFloat(snapshot.val().points) - points;
+                            }
+                        
+                            firebase.database().ref('users/' + currUser.uid + '/ranking/').set({
+                                points: points
+                            });
+                            
+                        });
+                    }); 
                 
                     firebase.database().ref('users/' + currUser.uid + '/waste/brands').once("value").then(function(snapshot) {
                         if (brand != "") {
@@ -344,9 +414,6 @@ function topFoods() {
 
                         if (topFood[1] < parseFloat(childSnapshot.val().qty)) {
 
-
-                            console.log(parseFloat(childSnapshot.val().qty));
-
                             for (var i = 4; i > fNo; i--) {
                                 topFoods[i] = topFoods[i - 1];
                             }
@@ -388,4 +455,195 @@ function summoney(){
     
     return total;
     
+}
+
+function commRank() {
+    
+    var points = new Promise(function(resolve, reject) { 
+     
+        firebase.database().ref('users/' + currUser.uid + '/ranking').once("value").then(function(snapshot){
+            if (snapshot.val() != null) {
+                resolve(snapshot.val().points);
+            }
+            
+        });
+    });
+        
+        
+    var totalUsers = new Promise(function(resolve, reject) { 
+        var sum = 0;
+        
+        firebase.database().ref('users/').once("value").then(function(snapshot){
+            snapshot.forEach(function(childSnapshot) {
+                if (childSnapshot.val().ranking != null) {
+                    sum++;
+                }
+            });
+            
+            resolve(sum);
+        });
+    });
+    
+   var position = new Promise(function(resolve, reject) { 
+        points.then(function(points) {
+            var pos = 1;
+            firebase.database().ref('users/').once("value").then(function(snapshot){
+                snapshot.forEach(function(childSnapshot) {
+                    if (childSnapshot.val().ranking != null) {
+                        if (childSnapshot.val().ranking.points < points) {
+                            pos++;
+                        }
+                    }
+                });
+                resolve(pos);
+            });
+        });
+    });
+    
+    var weeks = getWeeks();
+    
+    var percentile = new Promise(function(resolve, reject) { 
+        position.then(function(pos) {
+            totalUsers.then(function(users) {
+                weeks.then(function(weeks) {
+                    if (weeks > 0) {
+                        var percentile = pos * 100 / users;
+                        resolve(percentile);
+                    } else {
+                        resolve(0);
+                    }
+                })
+            });
+        });
+    });
+    
+    return percentile;
+    
+}
+
+function locationRank() {
+    var location = new Promise(function(resolve, reject) { 
+         firebase.database().ref('users/' + currUser.uid).once("value").then(function(snapshot){ 
+             if (snapshot.val().location != null) {
+                resolve(snapshot.val().location);
+            }
+         });
+    });
+    
+    var points = new Promise(function(resolve, reject) { 
+     
+        firebase.database().ref('users/' + currUser.uid + '/ranking').once("value").then(function(snapshot){
+            if (snapshot.val() != null) {
+                resolve(snapshot.val().points);
+            }
+            
+        });
+    });
+        
+        
+    var totalUsers = new Promise(function(resolve, reject) { 
+        
+        location.then(function(loc) {
+            var sum = 0;
+            
+            firebase.database().ref('users/').once("value").then(function(snapshot){
+                snapshot.forEach(function(childSnapshot) {
+                        if (childSnapshot.val().location == loc) {
+                            if (childSnapshot.val().ranking != null) {
+                                sum++;
+                            }
+                        }
+                    });
+                resolve(sum);
+            });
+        });  
+    });
+    
+    var position = new Promise(function(resolve, reject) { 
+        
+        var pos = 1;
+        
+        points.then(function(points) {
+            location.then(function(loc) {
+                firebase.database().ref('users/').once("value").then(function(snapshot){
+                    snapshot.forEach(function(childSnapshot) {
+                        if (childSnapshot.val().location == loc) {
+                            if (childSnapshot.val().ranking != null) {
+                                if (childSnapshot.val().ranking.points < points) {
+                                    pos++;
+                                }
+                            }
+                        }
+                    });
+                    resolve(pos);
+                });
+            });
+        });
+    });
+    
+    var weeks = getWeeks();
+    
+    var percentile = new Promise(function(resolve, reject) { 
+        position.then(function(pos) {
+            totalUsers.then(function(users) {
+                weeks.then(function(weeks) {
+                    if (weeks > 0) {
+                        var percentile = pos * 100 / users;
+                        resolve(percentile);
+                    } else {
+                        resolve(0);
+                    }
+                })
+            });
+        });
+    });
+    
+    return percentile;
+}
+
+function getWeeks() {
+    
+    var weeks = new Promise(function(resolve, reject) { 
+        var startDate = new Promise(function(resolve, reject) { 
+            firebase.database().ref('users/' + currUser.uid).once("value").then(function(snapshot){ 
+                resolve(snapshot.val().startDate);
+            });
+        });
+
+        var date = getDate().split('-');
+
+        var currDate = new Date(date[0], date[1]-1, date[2]);
+        
+        startDate.then(function(data) {
+            data = data.split('-');
+
+            var startDate = new Date(data[0], data[1]-1, data[2]);
+
+            resolve(Math.floor((Date.parse(currDate)-Date.parse(startDate))/(604800000)));
+        });
+    });
+    
+    return weeks;
+    
+}
+
+function setLocation(loc) {
+    
+    checkForUser();
+    
+    firebase.database().ref('users/' + currUser.uid).update({
+        location: loc
+    });
+}
+
+function getLocation() {
+    var location = new Promise(function(resolve, reject) { 
+         firebase.database().ref('users/' + currUser.uid).once("value").then(function(snapshot){ 
+             if (snapshot.val().location != null) {
+                resolve(snapshot.val().location);
+            }
+         });
+    });
+    
+    return location;
 }

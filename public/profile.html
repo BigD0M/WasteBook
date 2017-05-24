@@ -16,7 +16,7 @@
         <script src="script/jquery.cookie.js"></script>
         <script src="script/profilePage.js"></script>
         <script src="script/0.js"></script>
-        
+    
         <!-- Firebase -->
         <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
         <script src="script/firebaseStart.js"></script>
@@ -29,6 +29,10 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
         <script src="script/charts.js"></script>
 
+        <!-- Location scripts -->
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBoKdEliB6BMZAhh1yFBTqnnLjCnSckc78&"></script>
+        <script src="script/userLocation.js"></script>
+        
         
     </head>
     <!-- NavBar -->
@@ -81,10 +85,10 @@
                                 <button class="btn button btn-danger delete" onclick="openDelete()">Remove</button>
                             </div>
                             <div class="col-sm-2">
-                                <button class="btn button btn-danger delete" onclick="openDelete(); deleteLogs();" style='display: none'>Confirm</button>
+                                <button class="btn button btn-danger delete" onclick="deleteLogs(); clearDel();" style='display: none'>Confirm</button>
                             </div>
                             <div class="col-sm-2">
-                                <button class="btn button btn-danger delete" onclick="openDelete(); clearDel();" style='display: none'>Cancel</button>
+                                <button class="btn button btn-danger delete" onclick="clearDel();" style='display: none'>Cancel</button>
                             </div>
                         </div>
                         <div class="waste-form form-group">
@@ -92,10 +96,10 @@
                                 <input class="form-control" type="text" name="food" placeholder="food">
                             </div>
                             <div class="col-sm-2">
-                                <input class="form-control" type="number" min="0" name="qty" placeholder="quantity">
+                                <input class="form-control" type="number" min=0 name="qty" placeholder="quantity">
                             </div>
                             <div class="col-sm-2">
-                                <input class="form-control" type="number" min="0" name="price" placeholder="price(optional)">
+                                <input class="form-control" step="any" type="number" min=0 name="price" placeholder="price(optional)">
                             </div>
                             <div class="col-sm-2">
                                 <select class="form-control" type="text" name="reason">
@@ -164,6 +168,45 @@
                     <div class="rank-cover">
                         <p>View Rank</p>
                         <img src="images/crown.png" alt="crown"/>
+                    </div>
+                    <div class="rank-container">
+                        <div id="communityRank" class="rankHolder">
+                            <script>
+                                
+                                var commRanking = commRank();
+
+                                commRanking.then(function(rank) {
+                                    if (rank != 0) {
+                                        $("<h1>App Community Rank: </br>" 
+                                            + rank + "%</h1>").appendTo("#communityRank");
+                                    } else {
+                                        $("<h1>App Community Rank:</h1>").appendTo("#communityRank");
+                                        $("<h6>You must have been active for atleast a week before you can receive a rank</h6>").appendTo("#communityRank");
+                                    }
+                                });
+                            </script>
+                        </div>
+                        <div id="locationRank" class="rankHolder">
+                            <script>
+                                
+                                var locationRanking = locationRank();
+
+                                locationRanking.then(function(rank) {
+                                    if (rank != 0) {
+                                        $("<h1>Location Rank: </br>" 
+                                            + rank + "%</h1>").appendTo("#locationRank");
+                                    } else {
+                                        $("<h1>Location Rank:</h1>").appendTo("#locationRank");
+                                        $("<h6>You must have been active for atleast a week and must enable location to recieve a rank on your location</h6>").appendTo("#locationRank");
+                                    }
+                                });
+                                
+                            </script>
+                        </div>
+                        <div id="genderRank" class="rankHolder">
+                            <input type="radio">
+                            <input type="radio">
+                        </div>
                     </div>
                 </div>
             </div>
