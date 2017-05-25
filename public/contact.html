@@ -116,7 +116,14 @@
 					<p><label id="message">Your Message(*):</label></p>
 					<p><textarea id="subject" name="subject" placeholder="Write something.." style="height:200px" required></textarea></p>
 
-					<input id="submit" type="submit" value="Submit">
+					<input id="submit" type="submit" value="Submit" onclick="return foo();" />
+                    
+                    <script>
+                        function foo(){
+                            alert("Your message sent!");
+                            return true;
+                        }
+                    </script>
 				
 				</form>
 			</div>

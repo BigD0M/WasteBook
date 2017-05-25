@@ -18,20 +18,32 @@
 
 .waste {
     width: 33% auto;
-    background-color: #ff8800;
+    background-color: #ff941a;
     border: 1px solid white;
+}
+
+.waste:hover {
+    background-color: orange;
 }
 
 .stats {
     width: 33% auto;
-    background-color: #ff8800;
+    background-color: #ff941a;
     border: 1px solid white;
+}
+
+.stats:hover {
+    background-color: orange;
 }
 
 .rank {
     width: 34% auto;
-    background-color: #ff8800;
+    background-color: #ff941a;
     border: 1px solid white;
+}
+
+.rank:hover {
+    background-color: orange;
 }
 
 .waste-form {
@@ -68,32 +80,56 @@
 
 .waste.grey {
     width: 33% auto;
+    background-color: #a5a7aa;
+}
+
+.waste.grey:hover {
     background-color: #B4B4B4;
 }
 
 .stats.grey {
     width: 33% auto;
+    background-color: #a5a7aa;
+}
+
+.stats.grey:hover {
     background-color: #B4B4B4;
 }
 
 .rank.grey {
     width: 34% auto;
+    background-color: #a5a7aa;
+}
+
+.rank.grey:hover {
     background-color: #B4B4B4;
 }
 
 .waste.green {
     width: 33% auto;
-    background-color: #54BF3D;
+    background-color: #1ab21d;
+}
+
+.waste.green:hover {
+    background-color: #2cc12f;
 }
 
 .stats.green {
     width: 33% auto;
-    background-color: #54BF3D;
+    background-color: #1ab21d;
+}
+
+.stats.green:hover {
+    background-color: #2cc12f;
 }
 
 .rank.green {
     width: 34% auto;
-    background-color: #54BF3D;
+    background-color: #1ab21d;
+}
+
+.rank.green:hover {
+    background-color: #2cc12f;
 }
 
 .waste.black {
@@ -101,9 +137,17 @@
     background-color: #1c1c1c;
 }
 
+.waste.black:hover {
+    background-color: #323233;
+}
+
 .stats.black {
     width: 33% auto;
     background-color: #1c1c1c;
+}
+
+.stats.black:hover {
+    background-color: #323233;
 }
 
 .rank.black {
@@ -111,9 +155,17 @@
     background-color: #1c1c1c;
 }
 
+.rank.black:hover {
+    background-color: #323233;
+}
+
 .waste.blue {
     width: 33% auto;
     background-color: #215791;
+}
+
+.waste.blue:hover {
+    background-color: #2e61b2;
 }
 
 .stats.blue {
@@ -121,24 +173,149 @@
     background-color: #215791;
 }
 
+.stats.blue:hover {
+    background-color: #2e61b2;
+}
+
 .rank.blue {
     width: 34% auto;
     background-color: #215791;
 }
 
+.rank.blue:hover {
+    background-color: #2e61b2;
+}
+
 .waste.yellow {
     width: 33% auto;
-    background-color: #ff8800;
+    background-color: #ff941a;
+}
+
+.waste.yellow:hover {
+    background-color: orange;
 }
 
 .stats.yellow {
     width: 33% auto;
-    background-color: #ff8800;
+    background-color: #ff941a;
+}
+
+.stats.yellow:hover {
+    background-color: orange;
 }
 
 .rank.yellow {
     width: 34% auto;
-    background-color: #ff8800;
+    background-color: #ff941a;
+}
+
+.rank.yellow:hover {
+    background-color: orange;
+}
+
+.waste.active, .waste.grey.active, .waste.green.active, .waste.black.active, .waste.blue.active, .waste.yellow.active {
+    background-image: url(../images/desktop-waste-background.png);
+    background-size: cover;
+}
+
+.waste.mobile {
+    background-image: url(../images/mobile-waste-yellow.png);
+    background-size: cover;
+}
+
+.waste.grey.mobile {
+    background-image: url(../images/mobile-waste-grey.png);
+    background-size: cover;
+}
+
+.waste.green.mobile {
+    background-image: url(../images/mobile-waste-green.png);
+    background-size: cover;
+}
+
+.waste.black.mobile {
+    background-image: url(../images/mobile-waste-black.png);
+    background-size: cover;
+}
+
+.waste.blue.mobile {
+    background-image: url(../images/mobile-waste-blue.png);
+    background-size: cover;
+}
+
+.waste.yellow.mobile {
+    background-image: url(../images/mobile-waste-yellow.png);
+    background-size: cover;
+}
+
+.stats.active, .stats.grey.active, .stats.green.active, .stats.black.active, .stats.blue.active , .stats.yellow.active {
+    background-image: url(../images/desktop-stats-background.png);
+    background-size: cover;
+}
+
+.stats.mobile {
+    background-image: url(../images/mobile-stats-yellow.png);
+    background-size: cover;
+}
+
+.stats.grey.mobile {
+    background-image: url(../images/mobile-stats-yellow.png);
+    background-size: cover;
+}
+
+.stats.green.mobile {
+    background-image: url(../images/mobile-stats-green.png);
+    background-size: cover;
+}
+
+.stats.black.mobile {
+    background-image: url(../images/mobile-stats-black.png);
+    background-size: cover;
+}
+
+.stats.blue.mobile {
+    background-image: url(../images/mobile-stats-blue.png);
+    background-size: cover;
+}
+
+.stats.yellow.mobile {
+    background-image: url(../images/mobile-stats-yellow.png);
+    background-size: cover;
+}
+
+.rank.active, .rank.grey.active, .rank.green.active, .rank.black.active, .rank.blue.active, .rank.yellow.active {
+    background-image: url(../images/desktop-rank-background.png);
+    background-size: cover;
+}
+
+.rank.mobile {
+    background-image: url(../images/mobile-rank-orange.png);
+    background-size: cover;
+}
+
+.rank.grey.mobile {
+    background-image: url(../images/mobile-rank-grey.png);
+    background-size: cover;
+}
+
+.rank.green.mobile {
+    background-image: url(../images/mobile-rank-green.png);
+    background-size: cover;
+}
+
+.rank.black.mobile {
+    background-image: url(../images/mobile-rank-black.png);
+    background-size: cover;
+}
+
+.rank.blue.mobile {
+    background-image: url(../images/mobile-rank-blue.png);
+    background-size: cover;
+}
+
+.rank.yellow.mobile {
+    background-image: url(../images/mobile-rank-orange.png);
+    background-size: cover;
 }
 
 .waste-cover, .stats-cover, .rank-cover {
