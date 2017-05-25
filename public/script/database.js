@@ -513,11 +513,13 @@ function commRank() {
         position.then(function(pos) {
             totalUsers.then(function(users) {
                 weeks.then(function(weeks) {
-                    if (weeks > 0) {
-                        var percentile = pos * 100 / users;
-                        resolve(percentile);
-                    } else if (pos == null) {
-                        resolve(null);
+                    if (pos > 0) {
+                        if (weeks > 0) {
+                            var percentile = pos * 100 / users;
+                            resolve(percentile);
+                        }
+                    } else if (!isNaN(pos)) {
+                        resolve(NaN);
                     } else {
                         resolve(0);
                     }
@@ -604,11 +606,13 @@ function locationRank() {
         position.then(function(pos) {
             totalUsers.then(function(users) {
                 weeks.then(function(weeks) {
-                    if (weeks > 0) {
-                        var percentile = pos * 100 / users;
-                        resolve(percentile);
-                    } else if (pos == null) {
-                        resolve(null);
+                    if (pos > 0) {
+                        if (weeks > 0) {
+                            var percentile = pos * 100 / users;
+                            resolve(percentile);
+                        }
+                    } else if (!isNaN(pos)) {
+                        resolve(NaN);
                     } else {
                         resolve(0);
                     }
@@ -688,11 +692,13 @@ function genderRank() {
         position.then(function(pos) {
             totalUsers.then(function(users) {
                 weeks.then(function(weeks) {
-                    if (weeks > 0) {
-                        var percentile = pos * 100 / users;
-                        resolve(percentile);
-                    } else if (pos == null) {
-                        resolve(null);
+                    if (pos > 0) {
+                        if (weeks > 0) {
+                            var percentile = pos * 100 / users;
+                            resolve(percentile);
+                        }
+                    } else if (!isNaN(pos)) {
+                        resolve(NaN);
                     } else {
                         resolve(0);
                     }
