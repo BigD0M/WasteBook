@@ -18,6 +18,9 @@ $(document).ready(function() {
                     $("<p class='header'>App Rank</p>").appendTo("#communityRank");
                     $("<p class='body'>You are in the Top " +
                       "<span class='ranking'>" + rank + "%</span>!</p>").appendTo("#communityRank");
+                    $('<a href="https://twitter.com/share" class="twitter-share-button" id="twitter-comm" data-text="" data-url="https://wastebook-2e70b.firebaseapp.com/" >Tweet</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>').appendTo("#communityRank");
+                    
+                    $("#twitter-comm").attr("data-text", "I'm in the top " + rank + "% in WasteBook!");
                 } else if (rank == 0) {
                     $("<img src='images/community.png' alt='community'>").appendTo("#communityRank");
                     $("<p class='header'>App Rank</p>").appendTo("#communityRank");
@@ -40,6 +43,10 @@ $(document).ready(function() {
                         $("<p class='header'>Location Rank</p>").appendTo("#locationRank");
                         $("<p class='body'>In " + loc + " you are in the top " +
                           "<span class='ranking'>" + rank + "%</span>!</p>").appendTo("#locationRank");
+                        
+                        $('<a href="https://twitter.com/share" class="twitter-share-button" id="twitter-loc" data-text="" data-url="https://wastebook-2e70b.firebaseapp.com/" >Tweet</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>').appendTo("#locationRank");
+                    
+                        $("#twitter-loc").attr("data-text", "Among people in " + loc + ", I'm in the top " + rank + "% in WasteBook!");
                     });
                 } else if (rank == 0) {
                     $("<img src='images/location.png' alt='location'>").appendTo("#locationRank");
@@ -83,8 +90,11 @@ $(document).ready(function() {
                             gender.then(function(gender) {
                                 $("<img src='images/gender.png' alt='gender'>").appendTo("#genderRank");
                                 $("<p class='header'>Gender Rank</p>").appendTo("#genderRank");
-                                $("<p class='body'>Amongst " + gender + "'s, you are in the top " +
+                                $("<p class='body'>Among " + gender + "s, you are in the top " +
                                   "<span class='ranking'>" + rank + "%</span>!</p>").appendTo("#genderRank");
+                                $('<a href="https://twitter.com/share" class="twitter-share-button" id="twitter-gen" data-text="" data-url="https://wastebook-2e70b.firebaseapp.com/" >Tweet</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>').appendTo("#genderRank");
+                    
+                                $("#twitter-gen").attr("data-text", "I'm in the top " + rank + "% among " + gender + "s in WasteBook!");
                             });
                         } else if (rank == 0) {
                             $("<img src='images/gender.png' alt='gender'>").appendTo("#genderRank");
