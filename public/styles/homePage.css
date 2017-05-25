@@ -11,10 +11,9 @@ body {
     background-repeat: no-repeat;                                           /* Keeps the background image from repeating when the window is slimmed */
     background-size: 100%;                                                  /* Sets the width and height of the background image to the same as the div */
     color: white;                                                           /* Color of the font in the div */
-    height: 75vw;   
+    height: 75vw;  
     max-height: 600px;
     line-height: 75vw;                                                     /* Pushes the div to just under the header */
-    margin-top: -20px; 
     text-align: center;                                                     /* Horizontally centres the text */
     width: 100%;                                                            /* Keeps the div from the left all the way to the right of the window */
 }
@@ -29,6 +28,7 @@ body {
 
 .imageBlockHeading {
     font-size: 5vw;
+    max-width: 95vw;
 }
 
 .imageBlockSubHeading {
@@ -66,10 +66,6 @@ body {
     margin: 10px 5% 0;                                                      /* Inserts space above paragraphs, none below, and 5% of the widht on each side */
 }
 
-#Problem li {
-    margin: 0 5% 0;   
-}
-
 .graphicsBlock {
     background-color: #ff8800;                                              /* Colour of the div for the text sections */
     color: white;                                                           /* Colour of the font for the text sections */
@@ -86,7 +82,7 @@ body {
 } 
 
 #MockUp {
-    width:40%;
+    width:30%;
     float:right; 
     min-width:400px;
 }

@@ -2,7 +2,7 @@ html, body {
     width: auto;
     height: 100%;
     background-color: whitesmoke;
-    background-image: url(http://aurora-awards.com/wp-content/uploads/2017/05/food-wallpaper-food-wallpaper.jpg),   url(http://s1.1zoom.me/big3/841/Meat_products_Vegetables_457159.jpg);
+    background-image: url("/image/contact_bg1.jpg"),   url("/image/contact_bg3.jpg");
     background-size: cover,cover;
     background-position: 0px 0px, 0px 800px;
     background-repeat: no-repeat, no-repeat;
@@ -10,7 +10,7 @@ html, body {
 
 
 #greeting {
-    font-family: Tw Cen MT Condensed;
+    font-family: Arial;
     font-weight: bold;
     font-size: 78px;
     text-align: right;
