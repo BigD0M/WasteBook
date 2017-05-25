@@ -16,8 +16,8 @@ $(document).ready(function() {
                 if (rank > 0) {
                     $("<img src='images/community.png' alt='community'>").appendTo("#communityRank");
                     $("<p class='header'>App Rank</p>").appendTo("#communityRank");
-                    $("<p class='body'>Amongst the WasteBook users you are in the top " +
-                      "<span class='ranking'>" + rank + "%</span> that waste the least!</p>").appendTo("#communityRank");
+                    $("<p class='body'>You are in the Top " +
+                      "<span class='ranking'>" + rank + "%</span>!</p>").appendTo("#communityRank");
                 } else if (rank == 0) {
                     $("<img src='images/community.png' alt='community'>").appendTo("#communityRank");
                     $("<p class='header'>WasteBook Rank:</p>").appendTo("#communityRank");
@@ -38,8 +38,8 @@ $(document).ready(function() {
                     location.then(function(loc) {
                         $("<img src='images/location.png' alt='location'>").appendTo("#locationRank");
                         $("<p class='header'>Location Rank</p>").appendTo("#locationRank");
-                        $("<p class='body'>Amongst the WasteBook users of " + loc + " you are in the top " +
-                          "<span class='ranking'>" + rank + "%</span> that waste the least!</p>").appendTo("#locationRank");
+                        $("<p class='body'>In " + loc + " you are in the top " +
+                          "<span class='ranking'>" + rank + "%</span>!</p>").appendTo("#locationRank");
                     });
                 } else if (rank == 0) {
                     $("<img src='images/location.png' alt='location'>").appendTo("#locationRank");
@@ -82,8 +82,8 @@ $(document).ready(function() {
                             gender.then(function(gender) {
                                 $("<img src='images/gender.png' alt='gender'>").appendTo("#genderRank");
                                 $("<p class='header'>Gender Rank</p>").appendTo("#genderRank");
-                                $("<p class='body'>Amongst the " + gender + "'s of the WasteBook community you are in the top " +
-                                  "<span class='ranking'>" + rank + "%</span> that waste the least!</p>").appendTo("#genderRank");
+                                $("<p class='body'>Amongst " + gender + "'s, you are in the top " +
+                                  "<span class='ranking'>" + rank + "%</span>!</p>").appendTo("#genderRank");
                             });
                         } else if (rank == 0) {
                             $("<img src='images/gender.png' alt='gender'>").appendTo("#genderRank");
