@@ -731,9 +731,14 @@ function getWeeks() {
 }
 
 function setLocation(loc) {
-    firebase.database().ref('users/' + currUser.uid).update({
-        location: loc
-    });
+    
+    setTimeout(function() {
+        firebase.database().ref('users/' + currUser.uid).update({
+            location: loc
+        });
+        
+    }, 500);
+    
 }
 
 function getLocation() {
