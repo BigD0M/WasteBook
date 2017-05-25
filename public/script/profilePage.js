@@ -7,7 +7,12 @@ $(function () {
                 $(".waste").animate({ width: '80%' }, 1500);
                 $(".stats").animate({ width: '10%' }, 1500);
                 $(".rank").animate({ width: '10%' }, 1500);
-
+                $('.rank').removeClass('active');
+                $('.rank').removeClass('mobile');
+                $('.stats').removeClass('active');
+                $('.stats').removeClass('mobile');
+                $('.waste').removeClass('mobile');
+                $('.waste').addClass('active');
 
             }
         } else {
@@ -16,7 +21,12 @@ $(function () {
                 $(".waste").animate({ height: '80%' }, 1500);
                 $(".stats").animate({ height: '10%' }, 1500);
                 $(".rank").animate({ height: '10%' }, 1500);
-
+                $('.rank').removeClass('active');
+                $('.rank').removeClass('mobile');
+                $('.stats').removeClass('active');
+                $('.stats').removeClass('mobile');
+                $('.waste').removeClass('active');
+                $('.waste').addClass('mobile');
 
             }
         }
@@ -44,6 +54,12 @@ $(function () {
                 $(".stats").animate({ width: '80%' }, 1500);
                 $(".waste").animate({ width: '10%' }, 1500);
                 $(".rank").animate({ width: '10%' }, 1500);
+                $('.rank').removeClass('active');
+                $('.rank').removeClass('mobile');
+                $('.waste').removeClass('active');
+                $('.waste').removeClass('mobile');
+                $('.stats').removeClass('mobile');
+                $('.stats').addClass('active');
             }
         } else {
             if ($(".stats").attr('id') == "normal" || $(".stats").attr('id') == "small") {
@@ -51,6 +67,12 @@ $(function () {
                 $(".stats").animate({ height: '80%' }, 1500);
                 $(".waste").animate({ height: '10%' }, 1500);
                 $(".rank").animate({ height: '10%' }, 1500);
+                $('.rank').removeClass('active');
+                $('.rank').removeClass('mobile');
+                $('.waste').removeClass('active');
+                $('.waste').removeClass('mobile');
+                $('.stats').removeClass('active');
+                $('.stats').addClass('mobile');
             }
         }
         
@@ -78,7 +100,12 @@ $(function () {
                 $(".rank").animate({ width: '80%' }, 1500);
                 $(".waste").animate({ width: '10%' }, 1500);
                 $(".stats").animate({ width: '10%' }, 1500);
-
+                $('.stats').removeClass('active');
+                $('.stats').removeClass('mobile');
+                $('.waste').removeClass('active');
+                $('.waste').removeClass('mobile');
+                $('.rank').removeClass('mobile');
+                $('.rank').addClass('active');
             }
         } else {
             if ($(".rank").attr('id') == "normal" || $(".rank").attr('id') == "small") {
@@ -86,7 +113,12 @@ $(function () {
                 $(".rank").animate({ height: '80%' }, 1500);
                 $(".waste").animate({ height: '10%' }, 1500);
                 $(".stats").animate({ height: '10%' }, 1500);
-
+                $('.stats').removeClass('active');
+                $('.stats').removeClass('mobile');
+                $('.waste').removeClass('active');
+                $('.waste').removeClass('mobile');
+                $('.rank').removeClass('active');
+                $('.rank').addClass('mobile');
             }
             
         }
