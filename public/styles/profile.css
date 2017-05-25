@@ -181,11 +181,11 @@ label {
     height: 40px;
     width: auto;
     display: inline;
-    margin: 2%;
+    margin: 1% 0 0 1%;
 }
 
 .rankHolder > .header {
-    font-size: 35px;
+    font-size: 30px;
     display: inline;
 }
 
