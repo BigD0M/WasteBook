@@ -163,7 +163,40 @@
     box-shadow: 2px 2px RGBA(0, 0, 0, 0.1);
     width: 95%;
     margin: 2.5%;
-    
+}
+
+label {
+    margin: auto;
+    font-size: 18px;
+    width: 45%;
+    height: 40px
+}
+
+.rankHolder > input {
+    margin: 2%;
+}
+
+.rankHolder > img {
+    float: left;
+    height: 40px;
+    width: auto;
+    display: inline;
+    margin: 2%;
+}
+
+.rankHolder > .header {
+    font-size: 35px;
+    display: inline;
+}
+
+.rankHolder > .body {
+    margin-top: 3%;
+    font-size: 16px;
+}
+
+.rankHolder > .body > .ranking {
+    font-size: 22px;
+    font-weight: 700;
 }
 
 @media only screen and (max-width: 768px) {
