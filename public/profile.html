@@ -33,6 +33,9 @@
         <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBoKdEliB6BMZAhh1yFBTqnnLjCnSckc78&"></script>
         <script src="script/userLocation.js"></script>
         
+        <!-- Ranks -->
+        <script src="script/rank.js"></script>
+        
         
     </head>
     <!-- NavBar -->
@@ -45,7 +48,6 @@
             <div class="collapse navbar-collapse navbar-menubuilder">
                 <ul class="nav navbar-nav navbar-left">
                     <li><a class="signOut">Sign out</a></li>
-                    <li><a href="/index.html">Change Password</a></li>
                     <li><a href="affiliated-apps.html">Affiliated Apps</a></li>
                     <li><a href="/contact.html">Contact Us</a></li>
                     <li class="dropdown">
@@ -171,41 +173,10 @@
                     </div>
                     <div class="rank-container">
                         <div id="communityRank" class="rankHolder">
-                            <script>
-                                
-                                var commRanking = commRank();
-
-                                commRanking.then(function(rank) {
-                                    if (rank != 0) {
-                                        $("<h1>App Community Rank: </br>" 
-                                            + rank + "%</h1>").appendTo("#communityRank");
-                                    } else {
-                                        $("<h1>App Community Rank:</h1>").appendTo("#communityRank");
-                                        $("<h6>You must have been active for atleast a week before you can receive a rank</h6>").appendTo("#communityRank");
-                                    }
-                                });
-                            </script>
                         </div>
                         <div id="locationRank" class="rankHolder">
-                            <script>
-                                
-                                var locationRanking = locationRank();
-
-                                locationRanking.then(function(rank) {
-                                    if (rank != 0) {
-                                        $("<h1>Location Rank: </br>" 
-                                            + rank + "%</h1>").appendTo("#locationRank");
-                                    } else {
-                                        $("<h1>Location Rank:</h1>").appendTo("#locationRank");
-                                        $("<h6>You must have been active for atleast a week and must enable location to recieve a rank on your location</h6>").appendTo("#locationRank");
-                                    }
-                                });
-                                
-                            </script>
                         </div>
                         <div id="genderRank" class="rankHolder">
-                            <input type="radio">
-                            <input type="radio">
                         </div>
                     </div>
                 </div>

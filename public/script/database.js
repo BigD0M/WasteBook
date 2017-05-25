@@ -464,8 +464,9 @@ function commRank() {
         firebase.database().ref('users/' + currUser.uid + '/ranking').once("value").then(function(snapshot){
             if (snapshot.val() != null) {
                 resolve(snapshot.val().points);
+            } else { 
+                resolve(null);
             }
-            
         });
     });
         
@@ -495,7 +496,13 @@ function commRank() {
                         }
                     }
                 });
-                resolve(pos);
+                
+                if (points != null) {
+                        resolve(pos);
+                } else {
+                    resolve(null);
+                }
+                
             });
         });
     });
@@ -509,6 +516,8 @@ function commRank() {
                     if (weeks > 0) {
                         var percentile = pos * 100 / users;
                         resolve(percentile);
+                    } else if (pos == null) {
+                        resolve(null);
                     } else {
                         resolve(0);
                     }
@@ -535,6 +544,8 @@ function locationRank() {
         firebase.database().ref('users/' + currUser.uid + '/ranking').once("value").then(function(snapshot){
             if (snapshot.val() != null) {
                 resolve(snapshot.val().points);
+            } else { 
+                resolve(null);
             }
             
         });
@@ -575,7 +586,13 @@ function locationRank() {
                             }
                         }
                     });
-                    resolve(pos);
+                    
+                    if (points != null) {
+                        resolve(pos);
+                    } else {
+                        resolve(null);
+                    }
+                    
                 });
             });
         });
@@ -590,6 +607,92 @@ function locationRank() {
                     if (weeks > 0) {
                         var percentile = pos * 100 / users;
                         resolve(percentile);
+                    } else if (pos == null) {
+                        resolve(null);
+                    } else {
+                        resolve(0);
+                    }
+                })
+            });
+        });
+    });
+    
+    return percentile;
+}
+
+function genderRank() {
+    var gender = checkGender();
+    
+    var points = new Promise(function(resolve, reject) { 
+     
+        firebase.database().ref('users/' + currUser.uid + '/ranking').once("value").then(function(snapshot){
+            if (snapshot.val() != null) {
+                resolve(snapshot.val().points);
+            } else { 
+                resolve(null);
+            }
+            
+        });
+    });
+        
+        
+    var totalUsers = new Promise(function(resolve, reject) { 
+        
+        gender.then(function(gender) {
+            var sum = 0;
+            
+            firebase.database().ref('users/').once("value").then(function(snapshot){
+                snapshot.forEach(function(childSnapshot) {
+                        if (childSnapshot.val().gender == gender) {
+                            if (childSnapshot.val().ranking != null) {
+                                sum++;
+                            }
+                        }
+                    });
+                resolve(sum);
+            });
+        });  
+    });
+    
+    var position = new Promise(function(resolve, reject) { 
+        
+        var pos = 1;
+        
+        points.then(function(points) {
+            gender.then(function(gender) {
+                firebase.database().ref('users/').once("value").then(function(snapshot){
+                    snapshot.forEach(function(childSnapshot) {
+                        if (childSnapshot.val().gender == gender) {
+                            if (childSnapshot.val().ranking != null) {
+                                if (childSnapshot.val().ranking.points < points) {
+                                    pos++;
+                                }
+                            }
+                        }
+                    });
+                    
+                    if (points != null) {
+                        resolve(pos);
+                    } else {
+                        resolve(null);
+                    }
+                    
+                });
+            });
+        });
+    });
+    
+    var weeks = getWeeks();
+    
+    var percentile = new Promise(function(resolve, reject) { 
+        position.then(function(pos) {
+            totalUsers.then(function(users) {
+                weeks.then(function(weeks) {
+                    if (weeks > 0) {
+                        var percentile = pos * 100 / users;
+                        resolve(percentile);
+                    } else if (pos == null) {
+                        resolve(null);
                     } else {
                         resolve(0);
                     }
@@ -628,9 +731,6 @@ function getWeeks() {
 }
 
 function setLocation(loc) {
-    
-    checkForUser();
-    
     firebase.database().ref('users/' + currUser.uid).update({
         location: loc
     });
@@ -646,4 +746,32 @@ function getLocation() {
     });
     
     return location;
+}
+
+function checkGender() {
+    var gender = new Promise(function(resolve, reject) { 
+         firebase.database().ref('users/' + currUser.uid).once("value").then(function(snapshot){ 
+             if (snapshot.val().gender != null) {
+                resolve(snapshot.val().gender);
+            } else {
+                resolve(null);
+            }
+         });
+    });
+    
+    return gender;
+}
+
+function setGender() {
+    if ($('#radFemale').is(':checked')) {
+        firebase.database().ref('users/' + currUser.uid).update({
+            gender: "Female"
+        });
+        location.reload(true);
+    } else if ($('#radMale').is(':checked')) {
+        firebase.database().ref('users/' + currUser.uid).update({
+            gender: "Male"
+        });
+        location.reload(true);
+    }
 }
