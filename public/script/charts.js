@@ -8,6 +8,7 @@ $(document).ready(function() {
             
             if (reasonCTX != null) {
                 reasonCTX.destroy();
+                reasonCTX.clear();
                 brandCTX.destroy();
                 foodCTX.destroy();
                 ctx.destroy();
@@ -19,29 +20,20 @@ $(document).ready(function() {
             var reason = reasons();
             reason.then(function(info) {
                  var reasonChart = new Chart(reasonCTX, {
-                     type: 'pie',
+                     type: 'doughnut',
                      data: {
                          labels: ["Expired", "Tasted Bad", "Got Stale", "Over Bought", "Over Cooked", "Other"],
                          datasets: [{
                              label: 'Reasons',
                              data: [info[0], info[1], info[2], info[3], info[4], info[5]],
                              backgroundColor: [
-                                 'rgba(255, 99, 132, 0.2)',
-                                 'rgba(54, 162, 235, 0.2)',
-                                 'rgba(255, 206, 86, 0.2)',
-                                 'rgba(75, 192, 192, 0.2)',
-                                 'rgba(153, 102, 255, 0.2)',
-                                 'rgba(255, 159, 64, 0.2)'
+                                 'rgb(255, 99, 132)',
+                                 'rgb(54, 162, 235)',
+                                 'rgb(255, 206, 86)',
+                                 'rgb(75, 192, 192)',
+                                 'rgb(153, 102, 255)',
+                                 'rgb(255, 159, 64)'
                              ],
-                             borderColor: [
-                                 'rgba(255,99,132,1)',
-                                 'rgba(54, 162, 235, 1)',
-                                 'rgba(255, 206, 86, 1)',
-                                 'rgba(75, 192, 192, 1)',
-                                 'rgba(153, 102, 255, 1)',
-                                 'rgba(255, 159, 64, 1)'
-                             ],
-                             borderWidth: 1
                          }]
                      },
                      options: {
