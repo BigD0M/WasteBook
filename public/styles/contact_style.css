@@ -1,11 +1,11 @@
 html, body {
     width: auto;
     height: 100%;
-    background-color: whitesmoke;
-    background-image: url("/image/contact_bg1.jpg"),   url("/image/contact_bg3.jpg");
+    background-color: #ff8800;
+    /*background-image: url("/images/contact_bg1.jpg"), url("/images/contact_bg3.jpg");
     background-size: cover,cover;
     background-position: 0px 0px, 0px 800px;
-    background-repeat: no-repeat, no-repeat;
+    background-repeat: no-repeat, no-repeat;*/
 }
 
 

@@ -11,8 +11,9 @@ $(document).ready(function() {
             $("#genderRank").empty();
 
             var commRanking = commRank();
-
+            
             commRanking.then(function(rank) {
+                
                 if (rank > 0) {
                     $("<img src='images/community.png' alt='community'>").appendTo("#communityRank");
                     $("<p class='header'>App Rank</p>").appendTo("#communityRank");
@@ -24,7 +25,7 @@ $(document).ready(function() {
                 } else if (rank == 0) {
                     $("<img src='images/community.png' alt='community'>").appendTo("#communityRank");
                     $("<p class='header'>App Rank</p>").appendTo("#communityRank");
-                    $("<p class='body'>You must have been active for atleast a week before you can receive a rank</p>").appendTo("#communityRank");
+                    $("<p class='body'>You must have been active for at least a week before you can receive a rank</p>").appendTo("#communityRank");
                 } else if (isNaN(rank)) {
                     $("<img src='images/community.png' alt='community'>").appendTo("#communityRank");
                     $("<p class='header'>App Rank</p>").appendTo("#communityRank");
@@ -51,7 +52,7 @@ $(document).ready(function() {
                 } else if (rank == 0) {
                     $("<img src='images/location.png' alt='location'>").appendTo("#locationRank");
                     $("<p class='header'>Location Rank</p>").appendTo("#locationRank");
-                    $("<p class='body'>You must have been active for atleast a week and must enable location to recieve a rank on your location</p>").appendTo("#locationRank");
+                    $("<p class='body'>You must have been active for at least a week and must enable location to receive a rank on your location</p>").appendTo("#locationRank");
                 } else if (isNaN(rank)) {
                     $("<img src='images/location.png' alt='location'>").appendTo("#locationRank");
                     $("<p class='header'>Location Rank</p>").appendTo("#locationRank");
@@ -99,7 +100,7 @@ $(document).ready(function() {
                         } else if (rank == 0) {
                             $("<img src='images/gender.png' alt='gender'>").appendTo("#genderRank");
                             $("<p class='header'>Gender Rank</p>").appendTo("#genderRank");
-                            $("<p class='body'>You must have been active for atleast a week to receive a rank</hp>").appendTo("#genderRank");
+                            $("<p class='body'>You must have been active for at least a week to receive a rank</hp>").appendTo("#genderRank");
                         } else if (isNaN(rank)) {
                             $("<img src='images/gender.png' alt='gender'>").appendTo("#genderRank");
                             $("<p class='header'>Gender Rank</p>").appendTo("#genderRank");
