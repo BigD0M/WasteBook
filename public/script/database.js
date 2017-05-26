@@ -516,13 +516,13 @@ function commRank() {
                     if (pos > 0) {
                         if (weeks > 0) {
                             var percentile = pos * 100 / users;
-                            resolve(percentile);
+                            resolve(Math.round(percentile));
+                        } else {
+                            resolve(0);
                         }
                     } else if (!isNaN(pos)) {
                         resolve(NaN);
-                    } else {
-                        resolve(0);
-                    }
+                    } 
                 })
             });
         });
@@ -609,13 +609,13 @@ function locationRank() {
                     if (pos > 0) {
                         if (weeks > 0) {
                             var percentile = pos * 100 / users;
-                            resolve(percentile);
+                            resolve(Math.round(percentile));
+                        } else {
+                            resolve(0);
                         }
                     } else if (!isNaN(pos)) {
                         resolve(NaN);
-                    } else {
-                        resolve(0);
-                    }
+                    } 
                 })
             });
         });
@@ -695,13 +695,13 @@ function genderRank() {
                     if (pos > 0) {
                         if (weeks > 0) {
                             var percentile = pos * 100 / users;
-                            resolve(percentile);
+                            resolve(Math.round(percentile));
+                        } else {
+                            resolve(0);
                         }
                     } else if (!isNaN(pos)) {
                         resolve(NaN);
-                    } else {
-                        resolve(0);
-                    }
+                    } 
                 })
             });
         });

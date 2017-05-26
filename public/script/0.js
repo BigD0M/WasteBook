@@ -1,17 +1,15 @@
-window.onload = function () {
-    // First we get a hold of the 3 sections
-    var divs = document.getElementsByClassName("col-sm-4");
-
+$(document).ready(function () {
+    
     var theMiddleDivHasBeenClicked = false;
     var sectionOneOrThreeClicked = "one";
 
     if (theMiddleDivHasBeenClicked == false) {
         // Once the user clicks the first sections ("add waste")...
-        divs[4].addEventListener("click", function () {
+        $(".stats").click(function () {
             theMiddleDivHasBeenClicked = true;
             var counter = 5; // The amount of seconds the user has to enact the game
             var numberOfClicks = 1; // To keep track of the amount of times the user clicks
-
+            
             // Every second...
             var countDown = setInterval(function () {
 
@@ -22,15 +20,16 @@ window.onload = function () {
                 if (counter > 0) {
 
                     // We'll increment the amount of clicks by 1 if the user clicks on the 3rd section
-                    divs[5].addEventListener("click", function () {
+                    $(".waste").click(function () {
                         if (sectionOneOrThreeClicked == "one") {
+                            
                             numberOfClicks++;
                             sectionOneOrThreeClicked = "three";
                         }
                     });
 
                     // We'll increment the amount of clicks by 1 if the user clicks on the 1st section
-                    divs[0].addEventListener("click", function () {
+                    $(".rank").click(function () {
                         if (sectionOneOrThreeClicked == "three") {
                             numberOfClicks++;
                             sectionOneOrThreeClicked = "one";
@@ -429,4 +428,4 @@ window.onload = function () {
             }, 1000);
         });
     }
-}
+});
